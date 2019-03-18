@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e80242-2b28-421b-bdd6-cd18dfd12270" name="Default Changelist" comment="" />
+    <list default="true" id="24e80242-2b28-421b-bdd6-cd18dfd12270" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="77">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -40,8 +42,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
-    <option name="y" value="43" />
+    <option name="x" value="395" />
+    <option name="y" value="30" />
     <option name="width" value="1260" />
     <option name="height" value="737" />
   </component>
@@ -70,7 +72,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552944692733" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552945899431" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -94,16 +96,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552943697052</updated>
-      <workItem from="1552943700313" duration="1701000" />
+      <workItem from="1552943700313" duration="1922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1701000" />
+    <option name="totallyTimeSpent" value="1922000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="43" width="1260" height="737" extended-state="0" />
-    <editor active="true" />
+    <frame x="395" y="30" width="1260" height="737" extended-state="0" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -115,7 +116,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32868218" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.63410854" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -141,8 +142,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="77">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
         </state>
       </provider>
     </entry>
