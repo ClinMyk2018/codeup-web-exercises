@@ -1,3 +1,8 @@
+main{
+    align-content: center;
+    border: 2px aqua;
+}
+
 form input #email{
     margin-left: 10px;
 }

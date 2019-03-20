@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+
+    <style>
+
+        form{
+            width: 400px;
+            border: 2px solid black;
+            margin-top: 10%;
+            margin-left: 40%;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+
+        <label for="username"><strong>Username: </strong></label>
+        <input type="text" name="username" id="username" placeholder="Username" autofocus required>
+        <br>
+        <br>
+
+        <label for="email"><strong>Email: </strong></label>
+        <input type="email" name="email" id="email" placeholder="Input your email address" required>
+        <br>
+
+        <br>
+        <label for="password"><strong>Password: </strong></label>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <br>
+
+        <br>
+        <label for="cnfpassword"><strong>Confirm Password: </strong></label>
+        <input type="password" name="cnfpassword" id="cnfpassword" placeholder="Password" required>
+        <br>
+
+        <br>
+        <label for="signupbx">
+            Sign Me Up To The Newsletter!
+            <input type="checkbox" name="signup" value="signup" id="signupbx" checked>
+        </label>
+
+        <br>
+        <br>
+        <button type="submit">Create New Account! </button>
+
+
+
+</body>
+</html>

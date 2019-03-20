@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Search</title>
+
+    <style>
+        main {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .prptyp {
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <header>
+        <h2>Looking for Houses</h2>
+        <br>
+        <p><em>Please fill out the form below to proceed</em></p>
+    </header>
+    <hr>
+    <main>
+        <div class="prptyp">
+            <p><strong>What Kind of Property?</strong></p>
+            <select name="property_type">Types of Property
+                <option value="HS">House</option>
+                <option value="AP">Apartment</option>
+                <option value="TH">Townhome</option>
+            </select>
+
+            <label for="rent">
+                For Rent
+                <input type="radio" name="Rent" value="Rent" id="rent">
+            </label>
+            <label for="sale">
+                For Sale
+                <input type="radio" name="Sale" value="Sale" id="sale">
+            </label>
+        </div>
+        <br>
+        <p><strong>What Property Size?</strong></p>
+        <select name="property_size"> Square Footage of Property
+            <option value="5-10">500sqft-1000sqft</option>
+            <option value="11-18">1100sqft-1800sqft</option>
+            <option value="18-26">1800sqft-2600sqft</option>
+            <option value="26+">2600sqft +</option>
+        </select>
+        <br>
+
+        <br>
+        <p><strong>How Many Bedrooms</strong></p>
+        <select name="bedrooms">How many bedrooms
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+        </select>
+
+        <p><strong>How Many Bathrooms</strong></p>
+        <select name="bathrooms">How many bathrooms
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+        </select>
+        <br>
+        <br>
+
+        <div class="prices">
+            <label for="minprice"><strong>Min Price: </strong></label>
+            <input type="text" name="minprice" id="minprice" placeholder="Min Price">
+            <br>
+            <br>
+            <label for="maxprice"><strong>Max Price: </strong></label>
+            <input type="text" name="maxprice" id="maxprice" placeholder="Max Price">
+            <br>
+        </div>
+
+        <br>
+        <label for="zipcode"><strong>Zipcode: </strong></label>
+        <input type="text" name="zipcode" id="zipcode" placeholder="28502">
+        <br>
+        <br>
+        <button type="submit">Search Now</button>
+    </main>
+
+
+</body>
+</html>
