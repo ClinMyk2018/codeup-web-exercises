@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+    <link rel = "stylesheet" type = "text/css" href = "forms.css" />
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label for="email"><strong>Email: </strong></label>
+    <input type="email" name="email" id="email" placeholder="Input your email address" autofocus required>
+    <br>
+
+
+    <label for="password"><strong>Password: </strong></label>
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <br>
+
+    <br>
+    <label for="Bio"><strong>Tell Me About You</strong></label>
+    <br>
+    <textarea name="Bio" id="Bio" cols="70" rows="12"></textarea>
+    <br>
+
+    <p><strong>How Did You Hear About Us?</strong></p>
+    <label for="Hearabout">
+        Billboard
+        <input type="radio" name="Hear_about1" value="billboard" id="Hearabout">
+    </label>
+    <label for="Hearabout">
+        Radio Advertisment
+        <input type="radio" name="Hear_about2" value="Radio Advertisment" id="Hearabout">
+    </label>
+    <label for="Hearabout">
+        Internet Advertisment
+        <input type="radio" name="Hear_about3" value="Internet Advertisment" id="Hearabout">
+    </label>
+    <label for="Hearabout">
+        Other
+        <input type="radio" name="Hear_about4" value="Other" id="Hearabout">
+    </label>
+    <br>
+
+    <br>
+    <p><strong>What Browser Are You Using?</strong></p>
+    <select name="What_Browser">What Browser Are You Using?
+        <option value="IE">Internet Explorer</option>
+        <option value="CR">Chrome</option>
+        <option value="MZFX">Mozilla</option>
+    </select>
+    <br>
+
+    <br>
+    <button type="submit">Let's Go!</button>
+
+</body>
+</html>
