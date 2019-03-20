@@ -3,83 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <title>Github COPY</title>
+    <style>
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover:not(.active) {
+            background-color: darkslategray;
+        }
+
+        header {
+            background-color: #f6f6f6;
+            padding-top: 10px;
+        }
+
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        header li {
+            float: left;
+        }
+
+        header li a {
+            display: block;
+            color: gray;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        header li a:hover:not(.active) {
+            background-color: white;
+            text-decoration-line: underline;
+        }
+
+        h4 {
+            background-color: #f4f4f4;
+            margin: 15px;
+            padding: 10px;
+            width: 96%;
+        }
+
+        table {
+            margin: 15px;
+            width: 98%;
+            border: 1px solid #333333;
+            text-align: left;
+            border-spacing: o;
+        }
+
+        td {
+            border-bottom: 1px solid #333333;
+        }
+
+        footer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0px;
+            overflow: hidden;
+        }
+
+        footer li {
+            float: left;
+        }
+
+        footer li a {
+            display: inline;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .f2 {
+            list-style-type: none;
+            margin: 0;
+            padding: 0px;
+            overflow: hidden;
+        }
+
+        .f2 li {
+            float: right;
+        }
+
+        .f2 li a {
+            display: inline-block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
-    <nav>
-        <img src="http://placeholder.pics/svg/30" alt="Github Logo">
-        <a href="Pull Requests">Pull Requests</a>
-        <a href="Issues">Issues</a>
-        <a href="Marketplace">Marketplace</a>
-        <a href="Explore">Explore</a>
-    </nav>
-
-    <br>
-
-    <header>
-        <img src="http://placeholder.pics/svg/30" alt="Codeup Logo">
+<nav>
+    <ul>
+        <li><img src="http://placeholder.pics/svg/50" alt="Github Logo"></li>
+        <li><a href="">Pull Requests</a></li>
+        <li><a href="">Issues</a></li>
+        <li><a href="">Marketplace</a></li>
+        <li><a href="">Explore</a></li>
+    </ul>
+</nav>
+<header>
+    <img src="http://placeholder.pics/svg/40" alt="Codeup Logo">
 
     <ul>
-        <li>Repositories</li>
-        <li>People</li>
-        <li>Teams</li>
-        <li>Projects</li>
-        <li>Settings</li>
+        <li><a href="">Repositories</a></li>
+        <li><a href="">People</a></li>
+        <li><a href="">Teams</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Settings</a></li>
     </ul>
-    </header>
+</header>
 
-    <br>
+<br>
 
-    <div>
-        <h5>Codeup's Dev Team</h5>
-    
-        <table>
-            <tr>
-                <td><img src="http://placeholder.pics/svg/48" ></td>
-                <td>Kent Beck</td>
-                <td>Member</td>
-                <td>1 team</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><em>Kent Beck</em></td>
-            </tr>
-            <tr>
-                <td><img src="http://placeholder.pics/svg/48" ></td>
-                <td>Codeup instruction Staff</td>
-                <td>Member</td>
-                <td>1 team</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><em>Codeupinstructors</em></td>
-            </tr>
-            <tr>
-                <td><img src="http://placeholder.pics/svg/48" ></td>
-                <td>Martin Fowler</td>
-                <td>Member</td>
-                <td>0 teams</td>
-            </tr>
-        </table>
-    </div>
+<div>
 
-    <hr>
+    <h4>Codeup's Dev Team</h4>
+    <table>
+        <tr>
+            <td><img src="http://placeholder.pics/svg/60"></td>
+            <td>Kent Beck<br>
+                <small>Kent Beck</small>
+            </td>
+            <td>Member</td>
+            <td>1 team</td>
+        </tr>
+        <tr>
+            <td><img src="http://placeholder.pics/svg/60"></td>
+            <td>Codeup instruction Staff<br>
+                <small>Codeupinstructors</small>
+            </td>
+            <td>Member</td>
+            <td>1 team</td>
+        </tr>
 
-    <footer>
-        © 2018 Github, Inc.
-        <a href="Terms">Terms</a>
-        <a href="Privacy">Privacy</a>
-        <a href="Security">Security</a>
-        <a href="Status">Status</a>
-        <a href="Help">Help</a>
-        <a href="Contact Github">Contact Github</a>
-        <a href="API">API</a>
-        <a href="Training">Training</a>
-        <a href="Shop">Shop</a>
-        <a href="Blog">Blog</a>
-        <a href="About">About</a>
+        <tr>
+            <td><img src="http://placeholder.pics/svg/60"></td>
+            <td>Martin Fowler</td>
+            <td>Member</td>
+            <td>0 teams</td>
+        </tr>
+    </table>
+</div>
 
-    </footer>
+<hr>
 
+<footer>
+    <ul>
+        <li>© 2018 Github, Inc.</li>
+        <li><a href="Terms">Terms</a></li>
+        <li><a href="Privacy">Privacy</a></li>
+        <li><a href="Security">Security</a></li>
+        <li><a href="Status">Status</a></li>
+        <li><a href="Help">Help</a></li>
+    </ul>
+    <ul class="f2">
+        <li><a href="Contact Github">Contact Github</a></li>
+        <li><a href="API">API</a></li>
+        <li><a href="Training">Training</a></li>
+        <li><a href="Shop">Shop</a></li>
+        <li><a href="Blog">Blog</a></li>
+        <li><a href="About">About</a></li>
+    </ul>
+</footer>
 
 
 </body>
