@@ -3,16 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
+
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-bottom: 2px solid red;
+        }
+        li {
+            float: left;
+            border: 1px solid black;
+        }
+
+        li a {
+            display: inline-block;
+            padding: 43px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: gray;
+        }
+
+        header{
+            padding: 20px;
+        }
+        main{
+            padding-left: 25px;
+        }
+
+    </style>
 </head>
 <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
 
 
+        <nav class="Navbar">
+            <ul>
+                <li><img src="Shopping_Logo.jpg" height="100" width="120"/></li>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Shopping">Shopping</a></li>
+                <li><a href="#About Us">About Us</a></li>
+                <li><a href="#Contact Us">Contact Us</a></li>
+            </ul>
+        </nav>
         <header>
             <h3>Checkout Basket</h3>
             <p><em>Please fill out the form below to proceed</em></p>
         </header>
-        <hr>
         <main>
             <div class="CCN">
                 <label for="CC_Number"><strong>CC Number: </strong></label>
