@@ -1,3 +1,41 @@
-.fancy_header{
+body {
+    background-color: silver;
+    background-image: url(../Shopping_Logo.jpg);
+    font-family: "Apple Chancery";
+}
+
+h1 {
+    color: red;
+    text-decoration: underline;
+}
+header h1 {
+    text-align: center;
+}
+
+.fancy_header {
     color: purple;
+}
+ul {
+    list-style: square;
+}
+tr {
+    padding: 20px;
+}
+th {
+    text-align: left;
+    text-decoration: underline;
+    font-size: 23px;
+}
+td {
+    width: 32%;
+    padding-bottom: 10px;
+    font-size: 22px;
+    border-bottom: 2px solid red;
+}
+a {
+  font-family: "American Typewriter";
+}
+a:hover {
+    border: 2px solid red;
+    color: black;
 }
