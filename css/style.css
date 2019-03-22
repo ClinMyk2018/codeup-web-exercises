@@ -1,41 +1,152 @@
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: inherit;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+
 body {
     background-color: silver;
-    background-image: url(../Shopping_Logo.jpg);
+    background-image: url(../brainimg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
     font-family: "Apple Chancery";
+}
+
+.p1 {
+    text-align: center;
+    font-size: 30px;
 }
 
 h1 {
     color: red;
     text-decoration: underline;
 }
+
 header h1 {
     text-align: center;
+    font-size: 60px;
+}
+
+.first_sec {
+    height: 400px;
+    font-size: 28px;
+}
+
+
+li {
+    font-size: 32px;
+}
+
+.first_sec > #core {
+    float: left;
+    margin-left: 250px;
+}
+
+.first_sec > #core:hover {
+    border: 2px solid black;
+    background-color: dimgray;
+    color: #f4f4f4;
+    opacity: .9;
+}
+
+.first_sec > #process {
+    float: left;
+    margin-left: 100px;
+}
+
+.first_sec > #process:hover {
+    border: 2px solid black;
+    background-color: dimgray;
+    color: #f4f4f4;
+    opacity: .9;
+}
+
+.first_sec > #vision {
+    float: left;
+    margin-left: 100px;
+}
+
+.first_sec > #vision:hover {
+    border: 2px solid black;
+    background-color: dimgray;
+    color: #f4f4f4;
+    opacity: .9;
 }
 
 .fancy_header {
-    color: purple;
+    color: blue;
 }
+
+.second_sec {
+    text-align: center;
+}
+
+
 ul {
     list-style: square;
 }
+
+.third_sec {
+    margin-left: 19%
+}
+
+.third_sec h1 {
+    margin-left: 30%;
+}
+
+.third_sec p {
+    margin-left: 28%;
+}
+
 tr {
     padding: 20px;
 }
+
 th {
     text-align: left;
     text-decoration: underline;
     font-size: 23px;
 }
+
 td {
-    width: 32%;
+    width: 40%;
     padding-bottom: 10px;
-    font-size: 22px;
+    font-size: 24px;
     border-bottom: 2px solid red;
 }
+
 a {
-  font-family: "American Typewriter";
+    font-family: "American Typewriter";
+
 }
+
 a:hover {
     border: 2px solid red;
     color: black;
+}
+.bottombar {
+    text-align: center;
+}
+li {
+    list-style: none;
 }

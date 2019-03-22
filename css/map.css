@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+    font-size: 175%;
+}
+
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    padding: 20px;
+}
+
+#tooltip {
+    padding: 15px;
+    background-color: #eee;
+    color: #9c9c9c;
+    width: 100%;
+    text-align: center;
+}
+
+.land {
+    fill: #ccc;
+    fill-opacity: 1;
+    stroke: white;
+    stroke-opacity: 1;
+    stroke-width: 0.5;
+    transition: 0.2s ease-out;
+}
+
+.land:hover {
+    fill: red;
+}
+
+.tooltip {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
