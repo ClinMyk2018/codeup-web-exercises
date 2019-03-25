@@ -1,0 +1,115 @@
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    z-index: 1000;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: gray;
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    background-color: orangered;
+}
+button{
+    margin-bottom: 10px;
+}
+.topdiv{
+    height: 400px;
+    width: 80%;
+
+}
+
+.ivdrip{
+    position: relative;
+    top: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+#main-head1 {
+    width: 60%;
+    padding-left: 10px;
+    text-align: center;
+    position: absolute;
+    left: 35%;
+    top: 23%
+}
+.secdiv{
+    height: 250px;
+    width: 80%;
+}
+#main-head2{
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    left: 3%;
+    top: 60%
+}
+.drkwrk{
+    position: absolute;
+    top: 10%;
+    left: 110%;
+}
+
+.dntwrkdrk{
+    width: 90%;
+    height: 300px;
+}
+
+#pics{
+    float: left;
+    text-align: center;
+    margin-left: 5%;
+    border: 2px solid black;
+    padding: 2px;
+}
+
+
+#Quote{
+    text-align: center;
+    background-color: lightgrey;
+    padding: 20px;
+
+}
+footer{
+    text-align: center;
+    bottom: 10px;
+    width: 40%;
+    margin-left: 28%;
+    margin-top: 20px;
+
+}
+
+footer li{
+    padding: 5px;
+    list-style: none;
+    display: inline;
+    bottom: 10px;
+}
+footer p{
+    margin-left: 10%;
+}
