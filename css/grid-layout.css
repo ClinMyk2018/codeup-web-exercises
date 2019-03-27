@@ -94,6 +94,8 @@ body{
     background-color: cadetblue;
 }
 
+
+
 @media screen and (max-width: 768px) and (min-width: 501px){
     .column.one-half {
         width: 50%;
@@ -127,6 +129,9 @@ body{
     }
 
 }
+
+
+
 @media screen and (max-width: 500px){
     .column.one-half {
         width: 50%;
