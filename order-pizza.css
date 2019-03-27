@@ -9,9 +9,11 @@ nav li{
 }
 li.nav-item.active{
     background-color:#e7e7e7;
+    opacity: .8;
 }
 li.nav-item:hover{
     background-color:#e7e7e7;
+    opacity: .8;
 }
 li.nav-item.active a{
     color:#777 !important;
@@ -42,11 +44,6 @@ li.nav-item.active a{
 }
 
 
-.badge-dark{
-    border-radius: 15px;
-    margin: 5px;
-}
-
 .card-body{
     margin: 0;
     padding: 0;
@@ -57,8 +54,8 @@ li.nav-item.active a{
 
 }
 #card-body-head1{
-    background-color: lightblue;
-    color: blue;
+    background-color: #b4d0ef;
+    color: black;
     padding: 15px;
     margin: 0;
 }
@@ -98,8 +95,8 @@ li.nav-item.active a{
     height: 602px;
 }
 #card-body-head2{
-    background-color: lightblue;
-    color: blue;
+    background-color: #b4d0ef;
+    color: black;
     padding: 15px;
     margin: 0;
 }
@@ -112,11 +109,11 @@ li.nav-item.active a{
 }
 .c3c31{
     border-bottom: none;
-    background-color: lightblue;
+    background-color: #b4d0ef;
 }
 .c3c32{
     border-bottom: none;
-    background-color: lightblue;
+    background-color: #b4d0ef;
     padding-bottom: 1rem;
 }
 /*.card22{*/
@@ -135,22 +132,22 @@ li.nav-item.active a{
 }
 .c3c41{
     border-bottom: none;
-    background-color: lightblue;
+    background-color: #b4d0ef;
 }
 .c3c42{
     border-top: none;
     border-bottom: 1px solid lightgrey;
-    background-color: lightblue;
+    background-color: #b4d0ef;
     padding-bottom: 1rem;
 }
 .c3c43{
     border-top: none;
     border-bottom: none;
-    background-color: lightblue;
+    background-color: #b4d0ef;
 }
 .c3c44{
     border: none;
-    background-color: lightblue;
+    background-color: #b4d0ef;
     padding-bottom: 1rem;
     border-radius: 0 0 10px 10px;
 }
@@ -175,8 +172,8 @@ li.nav-item.active a{
     height: 688px;
 }
 #card-body-head3{
-    background-color: lightblue;
-    color: blue;
+    background-color: #b4d0ef;
+    color: black;
     padding: 15px;
     margin: 0;
 }

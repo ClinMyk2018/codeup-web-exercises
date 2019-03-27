@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no"/>
     <title>Pizza World</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -11,7 +11,8 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom border-danger">
+
     <a class="navbar-brand" href="#">Pizza world</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,27 +33,29 @@
             <button class="btn btn-outline-secondary" type="submit">Search stores near you!</button>
         </form>
         <form class="form-inline ml-auto">
-            <button class="btn text-muted my-2 my-sm-0" type="submit"><i class="fa fa-user mx-1"></i>Sign up</button>
+            <a href="log-in_pizza.html" class="btn text-muted my-2 my-sm-0" type="submit"><i class= "fa fa-user mx-1"></i>Sign In</a>
         </form>
     </div>
 </nav>
+
 <div class="jumbotron jumbotron-fluid d-none d-md-block">
     <div class="container" id="my-container">
         <h1 class="display-4">Welcome to Pizza World</h1>
     </div>
 </div>
+
 <div class="container2">
     <h2>Build Your Own Pizza!</h2>
     <hr>
     <ul class="nav nav-tabs">
         <li class="nav-tab-item">
-            <a class="nav-link active" href="#card-body-head"><span class="badge badge-dark">2</span> Size and crust</a>
+            <a class="nav-link active" href="#card-body-head"><span class="badge badge-pill badge-dark mr-2">2</span> Size and crust</a>
         </li>
         <li class="nav-tab-item">
-            <a class="nav-link" href="#card-body-head2"><span class="badge badge-dark">2</span>Cheese and sauce</a>
+            <a class="nav-link" href="#card-body-head2"><span class="badge badge-pill badge-dark mr-2">2</span>Cheese and sauce</a>
         </li>
         <li class="nav-tab-item">
-            <a class="nav-link" href="#card-body-head3"><span class="badge badge-dark">2</span>Toppings</a>
+            <a class="nav-link" href="#card-body-head3"><span class="badge badge-pill badge-dark mr-2">2</span>Toppings</a>
         </li>
     </ul>
     <div class="card-body">
@@ -60,23 +63,19 @@
         <br>
         <div class="card1">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Hand
-                    Tossed style
-                </li>
+                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Hand Tossed style</li>
                 <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item"><input type="radio" aria-label="Radio button before text">Small (10")</li>
-                <li class="list-group-item"><input type="radio" aria-label="Radio button before text">Medium (12")</li>
+                <li class="list-group-item "><input type="radio" name="Radio button before text"><span class="ml-2">Small (10")</span></li>
+                <li class="list-group-item "><input type="radio" name="Radio button before text"><span class="ml-2">Medium (12")</span></li>
             </ul>
         </div>
         <br>
         <div class="card2">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Crunchy
-                    thin crust
-                </li>
+                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Crunchy thin crust</li>
                 <li class="list-group-item">Thin enough for the optimum crispy to crunchy ratio.</li>
-                <li class="list-group-item"><input type="radio" aria-label="Radio button before text">Medium (12")</li>
-                <li class="list-group-item"><input type="radio" aria-label="Radio button before text">Large (14")</li>
+                <li class="list-group-item "><input type="radio" name="Radio button before text"><span class="ml-2">Medium (12")</span></li>
+                <li class="list-group-item "><input type="radio" name="Radio button before text"><span class="ml-2">Large (14")</span></li>
             </ul>
         </div>
         <br>
