@@ -1,33 +1,25 @@
 
 
-
-
-nav{
-    width:100%;
-    border-top: 1px solid gray;
-
+nav.navbar{
+    padding-top:0;
+    padding-bottom:0;
 }
-nav>.navbar-brand{
-    margin-left: 10px;
+nav li{
+    padding:8px;
 }
-nav>.navbar-opt:hover{
-    background-color: #848487;
-    padding: 1%;
-    font-size: larger;
+li.nav-item.active{
+    background-color:#e7e7e7;
 }
-nav>.navbar-opt-right{
-    float: right;
-    margin-left: 25%;
+li.nav-item:hover{
+    background-color:#e7e7e7;
 }
-nav>.navbar-opt-right:hover{
-    background-color: #848487;
-    padding: 1%;
-    font-size: larger;
+li.nav-item.active a{
+    color:#777 !important;
 }
 
 .jumbotron{
     background-image: url(order-pizza-img.png);
-    width: 100%;
+    background-size: cover;
 }
 .jumbotron-fluid h1{
     width: 100%;
