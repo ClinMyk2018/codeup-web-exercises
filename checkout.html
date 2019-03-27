@@ -3,81 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="order-pizza.css">
 
-    <style>
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            border-bottom: 2px solid red;
-        }
-        li {
-            float: left;
-            border: 1px solid black;
-        }
+    <!--<style>-->
+        <!--ul{-->
+            <!--list-style-type: none;-->
+            <!--margin: 0;-->
+            <!--padding: 0;-->
+            <!--overflow: hidden;-->
+            <!--border-bottom: 2px solid red;-->
+        <!--}-->
+        <!--li {-->
+            <!--float: left;-->
+            <!--border: 1px solid black;-->
+        <!--}-->
 
-        li a {
-            display: inline-block;
-            padding: 43px;
-            text-decoration: none;
-        }
-        li a:hover {
-            background-color: gray;
-        }
+        <!--li a {-->
+            <!--display: inline-block;-->
+            <!--padding: 43px;-->
+            <!--text-decoration: none;-->
+        <!--}-->
+        <!--li a:hover {-->
+            <!--background-color: gray;-->
+        <!--}-->
 
-        header{
-            padding: 20px;
-        }
-        main{
-            padding-left: 25px;
-        }
+        <!--header{-->
+            <!--padding: 20px;-->
+        <!--}-->
+        <!--main{-->
+            <!--padding-left: 25px;-->
+        <!--}-->
 
-    </style>
+    <!--</style>-->
 </head>
 <body>
-    <form method="POST" action="https://request-inspector.glitch.me/">
+<form method="POST" action="https://request-inspector.glitch.me/"></form>
 
 
-        <nav class="Navbar">
-            <ul>
-                <li><img src="Shopping_Logo.jpg" height="100" width="120"/></li>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Shopping">Shopping</a></li>
-                <li><a href="#About Us">About Us</a></li>
-                <li><a href="#Contact Us">Contact Us</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h3>Checkout Basket</h3>
+        <!--<nav class="Navbar">-->
+            <!--<ul>-->
+                <!--<li><img src="Shopping_Logo.jpg" height="100" width="120"/></li>-->
+                <!--<li><a href="#Home">Home</a></li>-->
+                <!--<li><a href="#Shopping">Shopping</a></li>-->
+                <!--<li><a href="#About Us">About Us</a></li>-->
+                <!--<li><a href="#Contact Us">Contact Us</a></li>-->
+            <!--</ul>-->
+        <!--</nav>-->
+
+<nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand">Pizza World</a>
+    <a class="navbar-opt" href="order-pizza.html">Order online</a>
+    <a class="navbar-opt">Menu</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
+    </form>
+    <a class="navbar-opt-right">Sign Up</a>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container" id="my-container">
+        <h1 class="display-4">Welcome to Pizza World</h1>
+    </div>
+</div>
+        <header style="margin-left: 15px;">
+            <h3>Pizza Box Checkout</h3>
             <p><em>Please fill out the form below to proceed</em></p>
         </header>
-        <main>
+        <main style="margin-left: 25px;">
             <div class="CCN">
-                <label for="CC_Number"><strong>CC Number: </strong></label>
+                <label for="CC_Number"><strong>CC Number: </strong></label><br>
                 <input type="text" name="CC_Number" id="CC_Number" placeholder="12345678910" required>
                 <br>
                 <br>
-                <label for="EX_Date"><strong>Experation Date: </strong></label>
+                <label for="EX_Date"><strong>Experation Date: </strong></label><br>
                 <input type="text" name="EX_Date" id="EX_Date" placeholder="01/2025" required>
                 <br>
                 <br>
-                <label for="S_Code"><strong>Security Code: </strong></label>
+                <label for="S_Code"><strong>Security Code: </strong></label><br>
                 <input type="text" name="S_Code" id="S_Code" placeholder="XXX" required>
                 <br>
             </div>
             <br>
 
             <div class="address">
-                <label for="address"><strong>Address: </strong></label>
+                <label for="address"><strong>Address: </strong></label><br>
                 <input type="text" name="address" id="address" placeholder="Address" required>
                 <br>
                 <br>
-                <label for="city/state"><strong>City/State: </strong></label>
+                <label for="city/state"><strong>City/State: </strong></label><br>
                 <input type="text" name="city/state" id="city/state" placeholder="City/State" required>
                 <br>
                 <br>
-                <label for="Zipcode"><strong>Zipcode: </strong></label>
+                <label for="Zipcode"><strong>Zipcode: </strong></label><br>
                 <input type="text" name="Zipcode" id="Zipcode" placeholder="Zipcode" required>
                 <br>
             </div>
@@ -89,8 +108,13 @@
             </label>
             <br>
             <br>
-            <button type="submit">Buy Now!</button>
+            <button type="submit">Buy Some Pizza!</button>
         </main>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 </body>

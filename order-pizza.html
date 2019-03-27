@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar fixed-top navbar-light bg-light">
     <a class="navbar-brand">Pizza World</a>
     <a class="navbar-opt">Order online</a>
     <a class="navbar-opt">Menu</a>
@@ -20,9 +20,8 @@
     <a class="navbar-opt-right">Sign Up</a>
 </nav>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <img src="order-pizza-img.png" height="30%" width="100%"/>
+<div class="jumbotron jumbotron-fluid d-none d-md-block">
+    <div class="container" id="my-container">
         <h1 class="display-4">Welcome to Pizza World</h1>
     </div>
 </div>
@@ -31,17 +30,17 @@
     <hr>
     <ul class="nav nav-tabs">
         <li class="nav-tab-item">
-            <a class="nav-link active" href="#"><span class="badge badge-dark">2</span> Size and crust</a>
+            <a class="nav-link active" href="#card-body-head"><span class="badge badge-dark">2</span> Size and crust</a>
         </li>
         <li class="nav-tab-item">
-            <a class="nav-link" href="#"><span class="badge badge-dark">2</span>Cheese and sauce</a>
+            <a class="nav-link" href="#card-body-head2"><span class="badge badge-dark">2</span>Cheese and sauce</a>
         </li>
         <li class="nav-tab-item">
-            <a class="nav-link" href="#"><span class="badge badge-dark">2</span>Toppings</a>
+            <a class="nav-link" href="#card-body-head3"><span class="badge badge-dark">2</span>Toppings</a>
         </li>
     </ul>
     <div class="card-body">
-        <header id="card-body-head">Choose size and crust</header>
+        <header id="card-body-head1">Choose size and crust</header>
         <br>
         <div class="card1">
             <ul class="list-group list-group-flush">
@@ -62,14 +61,91 @@
         </div>
         <br>
         <section class="cardfooter">
-            <a href="#" class="btn btn-primary">Next Step</a>
+            <a href="#card-body-head2" class="btn btn-primary">Next Step</a>
         </section>
 
     </div>
     <br>
 
 </div>
+<br>
+<div class="container3">
+    <div class="card-body">
+        <header id="card-body-head2">Choose cheese & sauce</header>
+        <br>
+        <div class="card3">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Cheese?</li>
+                <li class="list-group-item c3c31">Cheese</li>
+                <li class="list-group-item c3c32" style="border: none; border-radius: 0 0 10px 10px;">
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Type of cheese</option>
+                        <option value="1">Light</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Heavy</option>
+                    </select></li>
 
-
+            </ul>
+        </div>
+        <br>
+        <div class="card4">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Sauce?</li>
+                <li class="list-group-item c3c41">Sauce</li>
+                <li class="list-group-item c3c42">
+                    <select class="custom-select custom-select-sm">
+                        <option selected>Type of sauce</option>
+                        <option value="1">Tomato Sauce</option>
+                        <option value="2">Bar-B-Que</option>
+                        <option value="3">Italian</option>
+                    </select></li>
+                <li class="list-group-item c3c43">How Much?</li>
+                <li class="list-group-item c3c44" style="border-radius: 0 0 10px 10px;">
+                    <select class="custom-select custom-select-sm">
+                        <option value="1">Light</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Heavy</option>
+                    </select></li>
+            </ul>
+        </div>
+        <br>
+        <section class="cardfooter">
+            <a href="#card-body-head1" class="btn btn-primary">Previous Step</a>
+            <a href="#card-body-head3" class="btn btn-primary">Next Step</a>
+        </section>
+    </div>
+    <br>
+</div>
+<div class="container4">
+    <div class="card-body">
+        <header id="card-body-head3">Choose toppings</header>
+        <br>
+        <div class="card5">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Choose meats</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Beef</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Ham</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Philly Steak</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Bacon</li>
+            </ul>
+        </div>
+        <br>
+        <div class="card6">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: lightgray; border-radius: 10px 10px 0 0; ">Choose non-meats</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Green Peppers</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Mushrooms</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Onions</li>
+                <li class="list-group-item"><input type="checkbox" aria-label="checkbox button before text">Jalapeno Peppers</li>
+            </ul>
+        </div>
+        <br>
+        <section class="cardfooter">
+            <a href="checkout.html" class="btn btn-primary">Checkout</a>
+        </section>
+<br>
+        <br>
+    </div>
+</div>
 </body>
 </html>

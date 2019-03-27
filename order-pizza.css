@@ -25,8 +25,22 @@ nav>.navbar-opt-right:hover{
     font-size: larger;
 }
 
+.jumbotron{
+    background-image: url(order-pizza-img.png);
+    width: 100%;
+}
 .jumbotron-fluid h1{
+    width: 100%;
+    margin-top: 4%;
     text-align: center;
+    background-color: lightgrey;
+    opacity: .7;
+}
+#my-container{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -47,10 +61,10 @@ nav>.navbar-opt-right:hover{
     width:100%;
     border: 1px solid lightblue;
     border-radius: 5px;
-    height: 580px;
+    height: 587px;
 
 }
-#card-body-head{
+#card-body-head1{
     background-color: lightblue;
     color: blue;
     padding: 15px;
@@ -79,3 +93,116 @@ nav>.navbar-opt-right:hover{
     background-color: lightgrey;
     text-align: right;
 }
+.container3{
+    width: 90%;
+    margin-left: 5%;
+}
+.container3>.card-body{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    height: 602px;
+}
+#card-body-head2{
+    background-color: lightblue;
+    color: blue;
+    padding: 15px;
+    margin: 0;
+}
+.card3{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    height: 155px;
+}
+.c3c31{
+    border-bottom: none;
+    background-color: lightblue;
+}
+.c3c32{
+    border-bottom: none;
+    background-color: lightblue;
+    padding-bottom: 1rem;
+}
+/*.card22{*/
+    /*margin-left: 20px;*/
+    /*margin-right: 20px;*/
+    /*border: 1px solid lightgrey;*/
+    /*border-radius: 10px 10px 10px 10px;*/
+    /*height: 155px;*/
+/*}*/
+.card4{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    height: 260px;
+}
+.c3c41{
+    border-bottom: none;
+    background-color: lightblue;
+}
+.c3c42{
+    border-top: none;
+    border-bottom: 1px solid lightgrey;
+    background-color: lightblue;
+    padding-bottom: 1rem;
+}
+.c3c43{
+    border-top: none;
+    border-bottom: none;
+    background-color: lightblue;
+}
+.c3c44{
+    border: none;
+    background-color: lightblue;
+    padding-bottom: 1rem;
+    border-radius: 0 0 10px 10px;
+}
+/*.card22{*/
+    /*margin-left: 20px;*/
+    /*margin-right: 20px;*/
+    /*border: 1px solid lightgrey;*/
+    /*border-radius: 10px 10px 10px 10px;*/
+    /*height: 155px;*/
+/*}*/
+
+.container4{
+    width: 90%;
+    margin-left: 5%;
+}
+.container4>.card-body{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    height: 688px;
+}
+#card-body-head3{
+    background-color: lightblue;
+    color: blue;
+    padding: 15px;
+    margin: 0;
+}
+.card5{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    height: 250px;
+}
+.card6{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    height: 250px;
+}
+
+
+
+
