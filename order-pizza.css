@@ -1,0 +1,81 @@
+
+
+
+
+nav{
+    width:100%;
+    border-top: 1px solid gray;
+
+}
+nav>.navbar-brand{
+    margin-left: 10px;
+}
+nav>.navbar-opt:hover{
+    background-color: #848487;
+    padding: 1%;
+    font-size: larger;
+}
+nav>.navbar-opt-right{
+    float: right;
+    margin-left: 25%;
+}
+nav>.navbar-opt-right:hover{
+    background-color: #848487;
+    padding: 1%;
+    font-size: larger;
+}
+
+.jumbotron-fluid h1{
+    text-align: center;
+}
+
+
+.container2{
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+.badge-dark{
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.card-body{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    height: 580px;
+
+}
+#card-body-head{
+    background-color: lightblue;
+    color: blue;
+    padding: 15px;
+    margin: 0;
+}
+
+.card1{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    height: 200px;
+}
+.card2{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    height: 200px;
+}
+.cardfooter{
+    border: 1px solid lightblue;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: lightgrey;
+    text-align: right;
+}

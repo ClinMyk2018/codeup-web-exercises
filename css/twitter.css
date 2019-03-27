@@ -87,6 +87,7 @@ a {
 }
 .text-right {
     text-align: right;
+    margin-right: 10px;
 }
 .text-muted {
     color: var(--main-link-color);
