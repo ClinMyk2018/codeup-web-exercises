@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning JS</title>
+</head>
+<body>
+
+1.
+Exercise answers below:
+
+var a=1;
+undefined
+var b=a++;
+undefined
+var c= ++a;
+undefined
+var a = 1;
+undefined
+var d = "hello";
+undefined
+var e = false;
+undefined
+d++;
+NaN
+e++;
+0
+var perplexed;
+undefined
+perplexed +2;
+NaN
+var price = 2.7;
+undefined
+price.toFixed(2);
+"2.70"
+var price = "2.7";
+undefined
+price.toFixed(2);
+ERROR
+
+
+isNaN(0);
+false
+isNaN(1);
+false
+isNaN("");
+false
+isNaN("string");
+true
+isNaN("0");
+false
+isNaN("1");
+false
+isNaN("3.145");
+false
+isNaN(Number.MAX_VALUE);
+false
+isNaN(Infinity);
+false
+isNaN("true");
+true
+isNaN(true);
+false
+isNaN("false");
+true
+isNaN(false);
+false
+NaN == NaN;
+false
+!true;
+false
+!false
+true
+!!true;
+true
+!!false;
+false
+!!0;
+false
+!!-0;
+false
+!!1;
+true
+!!-1;
+true
+!!0.1;
+true
+!!"hello;
+VM1296:1 Uncaught SyntaxError: Invalid or unexpected token
+!!"hello";
+true
+!!"";
+false
+!!'';
+false
+!!"false";
+true
+!!"0";
+true
+
+2.
+Exercise answers below:
+
+var sample = "Hello Codeup";
+undefined
+sample.length;
+12
+sample.toUpperCase;
+ƒ toUpperCase() { [native code] }
+sample
+"Hello Codeup"
+sample.toUpperCase();
+"HELLO CODEUP"
+sample.toLowerCase();
+"hello codeup"
+sample ="Hello Codeup Students"
+"Hello Codeup Students"
+sample
+"Hello Codeup Students"
+var sample = "Hello Codeup";
+undefined
+sample
+"Hello Codeup"
+sample = sample + " Students"
+"Hello Codeup Students"
+sample
+"Hello Codeup Students"
+sample.replace(Students, Class);
+VM1573:1 Uncaught ReferenceError: Students is not defined
+at <anonymous>:1:16
+    (anonymous) @ VM1573:1
+    sample.replace( Students, Class);
+    VM1610:1 Uncaught ReferenceError: Students is not defined
+    at <anonymous>:1:17
+        (anonymous) @ VM1610:1
+        sample
+        "Hello Codeup Students"
+        sample.replace( "Students", "Class");
+        "Hello Codeup Class"
+        sample.indexOf("c");
+        -1
+        sample.indexOf("C");
+        6
+        sample.substring(6, 12);
+        "Codeup"
+
+
+
+<script>
+
+    var english = 24;
+    var math = 20;
+    var history = 22;
+    var science = 15;
+
+var classmax = 22;
+
+console.log(english <= classmax );
+console.log(math <= classmax );
+console.log(history <= classmax );
+console.log(science <= classmax );
+
+
+var offerstatus = true;
+var numberofitems = prompt("How many items did they buy?");
+console.log(numberofitems);
+var memeberstatus = true;
+
+if((memeberstatus && offerstatus) || (numberofitems > 2 && offerstatus)){
+    console.log("You can use the offer!")
+}else{
+    console.log("Sorry it's expired.")
+}
+
+
+
+var username = 'codeup';
+var password = 'notastrongpassword';
+
+    console.log(username.length <= 20);
+    console.log(password.length > 5);
+    console.log(password.includes(username));
+
+        // Couldn't figure out //
+
+    console.log(password.trim())
+
+
+
+</script>
+</body>
+</html>
