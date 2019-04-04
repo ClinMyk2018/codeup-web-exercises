@@ -1,3 +1,5 @@
+(function () {
+
 "use strict";
 
 var myName= "Mykal";
@@ -37,3 +39,5 @@ function applyDiscount(priceBeforeDiscount, discount) {
 var price = prompt("What is the price?");
 var discount = prompt("Discount percentage in decimal form: ")
 console.log("$" + applyDiscount(price, discount));
+
+})
