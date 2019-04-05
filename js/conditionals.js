@@ -18,21 +18,23 @@
 
 
 // var userconfirm = confirm("Would you like to write a number?");
-// if (userconfirm){
-//     var number1 = prompt("Please enter a number 1 - 12 :");
-//         if (+number1 % 2 === 0){
-//             alert("Your number was even!");}
-//         else {
-//             alert("Your number was odd");}
-//         alert("Your number, plus 100 is: " + (+number1 + 100));
-//         if (+number1 < 0){
-//             alert("Your number is negative!")
-//         } else{
-//             alert("Your number is positive!")
-//         }
-// } else {
-//     alert("Enter a number or leave please!");
-// }
+//     if (userconfirm === true){
+//         var number1 = prompt("Please enter a number 1 - 12 :");
+//             if (isNaN(number1)){
+//                 alert("Enter a number or leave please!");
+//             }else{
+//                 if (+number1 % 2 === 0){
+//                     alert("Your number was even!");}
+//                 else {
+//                     alert("Your number was odd");}
+//                 alert("Your number, plus 100 is: " + (+number1 + 100));
+//                 if (+number1 < 0){
+//                     alert("Your number is negative!")
+//                 } else{
+//                     alert("Your number is positive!")
+//                 }
+//             }
+//     }
 
 
 
@@ -76,7 +78,7 @@
 //     return (c)
 // }
 // console.log(analyzeColor(ask));
-
+//
 // if (randomColor === "red"){
 //     alert("Strawberries are red!")
 // } else if (randomColor === "blue"){
@@ -99,7 +101,7 @@
  * Refactor your above function to use a switch-case statement
  */
 
-// switch (ask){
+// switch (ask.toLowerCase()){
 //     case ("red"):
 //         alert("Strawberries are red!");
 //         break;
@@ -151,36 +153,36 @@
  * price before the discount was, and what their price after the discount is.
  */
 
-var bill = prompt("Enter the amount of your total bill?");
-var luckyNumber = Math.floor(Math.random() * 7);
-console.log(luckyNumber);
-
-function calculateTotal(luckyNumber, totalAmount){
-    var newPrice;
-    switch(luckyNumber){
-        case 1:
-            newPrice = totalAmount*(1-.1);
-            break;
-        case 2:
-            newPrice = totalAmount*(1-.25);
-            break;
-        case 3:
-            newPrice = totalAmount*(1-.35);
-            break;
-        case 4:
-            newPrice = totalAmount*(1-.5);
-            break;
-        case 5:
-            newPrice = totalAmount*(1-.75);
-            break;
-        default:
-            newPrice=0;
-            break;
-    }
-    console.log(newPrice);
-    return newPrice;
-}
-
-var discountedPrice = calculateTotal(luckyNumber, bill);
-alert("Your old bill was $"+ bill+ ", your lucky number was: " + luckyNumber+ ". Your lucky number discounted your price to a new price of: $" + discountedPrice+"!")
-
+// var bill = prompt("Enter the amount of your total bill?");
+// var luckyNumber = Math.floor(Math.random() * 7);
+// console.log(luckyNumber);
+//
+// function calculateTotal(luckyNumber, totalAmount){
+//     var newPrice;
+//     switch(luckyNumber){
+//         case 1:
+//             newPrice = totalAmount*(1-.1);
+//             break;
+//         case 2:
+//             newPrice = totalAmount*(1-.25);
+//             break;
+//         case 3:
+//             newPrice = totalAmount*(1-.35);
+//             break;
+//         case 4:
+//             newPrice = totalAmount*(1-.5);
+//             break;
+//         case 5:
+//             newPrice = totalAmount*(1-.75);
+//             break;
+//         default:
+//             newPrice=0;
+//             break;
+//     }
+//     console.log(newPrice);
+//     return newPrice;
+// }
+//
+// var discountedPrice = calculateTotal(luckyNumber, bill);
+// alert("Your old bill was $"+ bill+ ", your lucky number was: " + luckyNumber+ ". Your lucky number discounted your price to a new price of: $" + discountedPrice+"!")
+//
