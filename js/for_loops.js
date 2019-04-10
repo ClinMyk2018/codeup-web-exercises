@@ -19,14 +19,12 @@
 //     else console.log(ran + " is odd");
 //     console.log("loop :" + i)
 // }
-
-// var x,y,num;
+//
+// // var num = "";
 // for(x=0; x < 10; x++) {
-//     for (y=0; y < x; y++) {
-//         num += (x);
-//     }
+//     for (y=0; y < x; y++) num += x;
 //     console.log(num);
-//     num=[];
+//     var num = ""
 // }
 
 

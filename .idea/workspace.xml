@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e80242-2b28-421b-bdd6-cd18dfd12270" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/break_and_continue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/for_loops.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/loops-practice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/while.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/for_loops.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/for_loops.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/while.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/while.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/loops-practice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-284">
+            <state>
               <caret selection-end-line="4" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -57,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/js/while.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -68,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/for_loops.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="375">
+              <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -77,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/break_and_continue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="293">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -147,9 +143,9 @@
         <option value="$PROJECT_DIR$/conditionals.html" />
         <option value="$PROJECT_DIR$/js/conditionals.js" />
         <option value="$PROJECT_DIR$/js/loops-practice.js" />
-        <option value="$PROJECT_DIR$/js/for_loops.js" />
         <option value="$PROJECT_DIR$/js/break_and_continue.js" />
         <option value="$PROJECT_DIR$/loops.html" />
+        <option value="$PROJECT_DIR$/js/for_loops.js" />
         <option value="$PROJECT_DIR$/js/while.js" />
       </list>
     </option>
@@ -161,9 +157,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="106" />
+    <option name="x" value="329" />
     <option name="y" value="23" />
-    <option name="width" value="1174" />
+    <option name="width" value="951" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -196,7 +192,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554843339794" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554912915933" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
@@ -243,18 +239,18 @@
       <workItem from="1553779345490" duration="2165000" />
       <workItem from="1553866109967" duration="822000" />
       <workItem from="1554225059933" duration="7001000" />
-      <workItem from="1554300482677" duration="55050000" />
+      <workItem from="1554300482677" duration="66325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202150000" />
+    <option name="totallyTimeSpent" value="213425000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="106" y="23" width="1174" height="777" extended-state="0" />
+    <frame x="329" y="23" width="951" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.204947" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.204947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -596,7 +592,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/loops-practice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
+        <state>
           <caret selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -611,27 +607,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/break_and_continue.js">
+    <entry file="file://$PROJECT_DIR$/js/for_loops.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/break_and_continue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/for_loops.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/while.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
