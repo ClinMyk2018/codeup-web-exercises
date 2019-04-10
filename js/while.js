@@ -8,7 +8,7 @@
 
 // Mykal
 
-
+//
 // var allCones = Math.floor(Math.random() * 50) + 50;
 // console.log(allCones);
 // var remainingCones = allCones;
@@ -28,64 +28,27 @@
 //
 // }while (remainingCones > 0);
 //     console.log("Yay, I sold them all!");
-
-
-
-// Ricky
-
-
-// This is how you get a random number between 50 and 100
-// var allCones = Math.floor(Math.random() * 50) + 50;
-// console.log("I have " + allCones + " cones to sell.");
-// // This expression will generate a random number between 1 and 5
-// var sold;
-// do{
-//     sold = Math.floor(Math.random() * 5) + 1;
-//     if (allCones-sold<0){console.log("Cannot sell you "+sold+" cones I only have "+allCones);continue}
-//     allCones-=sold;
-//     console.log(sold+" cones sold... " + allCones + " left");
-// }while(allCones>0);
-// console.log("Yay! I sold them all!");
-
-
-
-
-
-
-// Samuel
-
-
-
-// var allCones = Math.floor(Math.random() * 50) + 50;
-// var requestedCones;
-// var stops = 0;
-// var remainingCones = allCones;
 //
-// console.log("I have " + allCones + " cones to sell today");
-//
-// do{
-//     requestedCones = (Math.floor(Math.random() * 5) + 1);
-//     stops++;
-//
-//     if(remainingCones > requestedCones){
-//         remainingCones = remainingCones - requestedCones;
-//         console.log("stop :" + stops);
-//         console.log("I sold " + requestedCones + " cones and I have a total of " + remainingCones + " cones left");
-//
-//     }else if (remainingCones < requestedCones) {
-//         console.log("stop :" + stops);
-//         console.log("I dont have " + requestedCones + " cones, but I do have " + remainingCones + " cones to sell");
-//         remainingCones = remainingCones - requestedCones;
-//
-//     }else if (remainingCones === 0){
-//         console.log("Perfect I sold my last cone")
-//
-//     }
-// }while (0 < remainingCones);
-// console.log("Sold a total of " + allCones + " today");
-// console.log("Sold all my cones for the day");
-//
-//
+
+// ------------------------------------------------
+
+
+// Attempt number 2!!
+
+
+var totalCones = Math.floor(Math.random() * 50) + 50;
+    console.log("I have " + totalCones + " to sell today!");
+var requestedAmountOfCones;
+do {
+    requestedAmountOfCones = Math.floor(Math.random() * 5) + 1;
+    if (totalCones-requestedAmountOfCones<0){
+        console.log("You requested " +requestedAmountOfCones+ " cones, and I only have " +totalCones+ " left, sorry!");
+        continue;}
+        totalCones = totalCones-requestedAmountOfCones;
+        console.log("You bought "+requestedAmountOfCones+ " cones, and now I have " +totalCones+ "left.")
+}while (totalCones > 0);
+console.log("I have sold all of my cones!");
+
 
 
 
