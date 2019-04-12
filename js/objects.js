@@ -12,12 +12,24 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    var person = {
-        firstName: "Mykal",
-        lastName: "Clinard",
-        sayHello: "Hello from" + person.firstName + person.lastName + "."
-    };
-    console.log(person);
+    // var person = [
+    //     {
+    //     firstName: 'Mykal',
+    //     lastName: 'Clinard',
+    //     sayHello: 'Hello from' + this.firstName + ' ' + this.lastName + '!'
+    //     }
+    //     ];
+    //
+    //
+    // // ---------ALSO for a method-------
+    //
+    // // var sayHello (function); {
+    // //     return "Hello from" + this.firstName + " " + this.lastName + "!"
+    // // }
+    //
+    //
+    // console.log(person.firstName);
+    // console.log(person.sayHello);
 
     /**
      * TODO:
@@ -43,24 +55,40 @@
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320}
-    ];
+    // var shoppers = [
+    //     {name: 'Cameron', amount: 180},
+    //     {name: 'Ryan', amount: 250},
+    //     {name: 'George', amount: 320}
+    // ];
+    //
+    // function discount(total) {
+    //     var output = 0;
+    //     if (total > 200) {
+    //         output = total * .12;
+    //         return output;
+    //     }
+    // }
+    //
+    //     function shopperInfo(shopper){
+    //     var output = "";
+    //     output += shopper.name + " spent $ " + shopper.amount.toFixed(2);
+    //     output +=  " and received a discount of $" + discount(shopper.amount).toFixed(2);
+    //     output += " and paid $" + (shopper.amount - discount(shopper.amount).toFixed(2));
+    //     }
+    //
+    //
+    //     function displayShoppersInfo(shoppers) {
+    //         shoppers.forEach(function (shopper) {
+    //             console.log(shopperInfo(shopper));
+    //         });
+    //     }
 
-    shoppers.forEach(function (value) {
-        var discount = 200;
-        if (amount >= discount){
-            amount = amount * 1-.12;
-            console.log(name + " ,your new price is: " + amount);
-        }else{
-            return "You did not buy enough to receive a discount " + name + ".";
-        }
 
-    });
+    // Teachers for loop
 
-    console.log(shoppers);
+    // for (var i = 0; i < shoppers.length; i +=1){
+    //     console.log(shopperInfo(shopper));
+    // }
 
 
     /** TODO:
@@ -76,20 +104,30 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books= [
-        {title: "Life Reactions", Author:
+    var books = [
+        {
+            title: "Life Reactions",
+            Author:
                 {firstName: "Mykal", lastName: "Clinard"}
         },
-        {title: "Simple Planning", Author:
+        {
+            title: "Simple Planning",
+            Author:
                 {firstName: "Allison", lastName: "Parque"}
         },
-        {title: "Cup Topics", Author:
+        {
+            title: "Cup Topics",
+            Author:
                 {firstName: "Paul", lastName: "Beecher"}
         },
-        {title: "Cowboys Life", Author:
+        {
+            title: "Cowboys Life",
+            Author:
                 {firstName: "Martin", lastName: "Snyder"}
         },
-        {title: "Periodic Time", Author:
+        {
+            title: "Periodic Time",
+            Author:
                 {firstName: "George", lastName: "Clooney"}
         }
     ];
@@ -97,6 +135,14 @@
     console.log(books[0].title);
     console.log(books[2].Author.firstName);
 
+
+    books.forEach(function (book, index) {
+       var output = "";
+       output += "Book #" + (index + 1) + "\n";
+       output += "Title: " + book.title + "\n";
+       output += "Author: " + book.Author.firstName + " " + book.Author.lastName + "\n";
+       console.log(output);
+    });
 
 
 
