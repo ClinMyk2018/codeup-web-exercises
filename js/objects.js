@@ -76,6 +76,27 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books= [
+        {title: "Life Reactions", Author:
+                {firstName: "Mykal", lastName: "Clinard"}
+        },
+        {title: "Simple Planning", Author:
+                {firstName: "Allison", lastName: "Parque"}
+        },
+        {title: "Cup Topics", Author:
+                {firstName: "Paul", lastName: "Beecher"}
+        },
+        {title: "Cowboys Life", Author:
+                {firstName: "Martin", lastName: "Snyder"}
+        },
+        {title: "Periodic Time", Author:
+                {firstName: "George", lastName: "Clooney"}
+        }
+    ];
+
+    console.log(books[0].title);
+    console.log(books[2].Author.firstName);
+
 
 
 
