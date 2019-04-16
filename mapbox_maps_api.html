@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 80vh;
+
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center">Mapbox API!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
+<!-- Custom JS -->
+<script src="js/keys.js"></script>
+
+<script>
+
+    var accessToken = mapboxKey;
+    mapboxgl.accessToken = accessToken;
+
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 15,
+        maxZoom: 20,
+        minZoom: 5
+    });
+    var habibiCafeCity = "Buena Suerte, Palawan";
+    // GeoCode Below
+    geocode(habibiCafeCity, mapboxKey).then(function (georesult) {
+            map.setCenter(georesult);
+            map.setZoom(16);
+    });
+    // //Marker and Popup Below
+    // var habibiMarker = new mapboxgl.Marker()
+    //     .setLngLat([119.3911, 11.1814])
+    //     .addTo(map);
+    // var habibiPopup = new mapboxgl.Popup()
+    //     .setHTML("<p><strong>Habibi Cafe</strong></p><p>Smoke shisha, and enjoy great food while watching the waves!</p>");
+    //
+    // habibiMarker.setPopup(habibiPopup);
+
+    var locationsILike = [
+        {habibiCafe: "Habibi Restaurant & Shisha Cafe"},
+        {deepBlue: "Deep Blue Dive Seafari"},
+        {happyPlace: "Happiness Beach Bar"}
+    ];
+
+    locationsILike.forEach(function (index) {
+        if (index >= [0]){
+            geocode(index, mapboxKey).then(function (georesult1) {
+                console.log(georesult1);
+            })
+        }
+        // var locationMarker = new mapboxgl.Marker()
+        //     .setLngLat()
+        //     .addTo(map);
+        // var locationPopup = new mapboxgl.Popup()
+        //     .setHTML("<p>Habibi Cafe</p><p>Smoke shisha, and enjoy great food while watching the waves!</p>");
+        // locationMarker.setPopup(locationPopup);
+    });
+
+
+    // var honCoor = {
+    //     lng: -157.8583,
+    //     lat: 21.3069};
+
+    //reverseGeoCode Below
+    // reverseGeocode(honCoor, accessToken).then(function(address) {
+    //     setTimeout(function () {
+    //         geocode(address, mapboxKey).then(function (coor){
+    //             map.setCenter(coor);
+    //             map.setZoom(10);
+    //         })
+    //     },8000)
+    // });
+
+</script>
+</body>
+</html>

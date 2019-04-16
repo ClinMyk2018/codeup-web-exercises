@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 80vh;
+
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center">Mapbox API!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
+<!-- Custom JS -->
+<script src="js/keys.js"></script>
+
+<script>
+
+    var accessToken = mapboxKey;
+    mapboxgl.accessToken = accessToken;
+    // Original Map over San Antonio
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 11,
+        center: [-98.4861, 29.4260]
+    });
+
+    var Zion = "Buena Suerte, Palawan";
+
+    // GeoCode Below
+
+        geocode(Zion, mapboxKey).then(function (georesult) {
+            setTimeout(function () {
+            map.setCenter(georesult);
+            map.setZoom(10);
+            }, 5000)
+            console.log(georesult);
+
+    });
+
+        var honCoor = {
+            lng: -157.8583,
+            lat: 21.3069};
+
+    //reverseGeoCode Below
+    reverseGeocode(honCoor, accessToken).then(function(address) {
+        setTimeout(function () {
+        geocode(address, mapboxKey).then(function (coor){
+            map.setCenter(coor);
+            map.setZoom(10);
+        })
+        },8000)
+    });
+
+</script>
+
+</body>
+</html>
