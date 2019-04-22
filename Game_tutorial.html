@@ -131,9 +131,16 @@
             }
             else {
                 lives--;
-                if(!lives) {
+                if(lives === 0) {
                     alert("HA! HA! HA! TRY AGAIN!!!!");
-                    document.location.reload();
+                    confirm("Do you want to play again?");
+                    if ("ok") {
+                        document.location.reload();
+                    } else {
+                        alert("Thanks for Playing");
+                    }
+
+
                 }
                 else {
                     x = canvas.width/2;
