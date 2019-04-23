@@ -3,17 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>jquery Exercises</title>
-    <link rel="stylesheet" href="js/jquery-2.2.4.js">
 </head>
 <body>
 
+<div class="topnav">
+    <ul>
+        <li class="codeUp"><p>Significant changes</p></li>
+        <li id="codeUp"><strong>NEW</strong></li>
+        <li class="codeUp"><p>Branch out</p></li>
+    </ul>
+</div>
+
+<div>
+    <h1 class="codeUp">Start Today!</h1>
+</div>
+
+
+<script src="js/jquery-2.2.4.js"></script>
 
 <script>
 
     window.onload = function() {
         alert( 'The page has finished loading!' );
-    }
+    };
+
+    $( ".codeUp" )
+        .css("border", "1px solid red");
+
+    $("li,p,h1")
+        .css("color", "orange");
+
+    var start = $("h1").html();
+    alert(start)
+
+    $("#codeUp")
+        .css({
+            fontSize: "30px",
+            color: "blue"
+        })
 
 </script>
+
+
+
 </body>
 </html>
