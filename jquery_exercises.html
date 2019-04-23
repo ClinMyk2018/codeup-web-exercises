@@ -7,9 +7,9 @@
 <body>
 
 <div class="topnav">
-    <ul>
-        <li class="codeUp"><p>Significant changes</p></li>
-        <li id="codeUp"><strong>NEW</strong></li>
+    <ul >
+        <li class="codeUp" id="liFirst"><p>Significant changes</p></li>
+        <li class="codeUp"><strong>NEW</strong></li>
         <li class="codeUp"><p>Branch out</p></li>
     </ul>
 </div>
@@ -23,24 +23,50 @@
 
 <script>
 
-    window.onload = function() {
-        alert( 'The page has finished loading!' );
-    };
+    // window.onload = function() {
+    //     alert( 'The page has finished loading!' );
+    // };
 
-    $( ".codeUp" )
-        .css("border", "1px solid red");
+    // $( ".codeUp" )
+    //     .css("border", "1px solid red");
 
-    $("li,p,h1")
+    $("li,h1")
         .css("color", "orange");
 
-    var start = $("h1").html();
-    alert(start)
+    // var start = $("h1").html();
+    // alert(start);
 
-    $("#codeUp")
-        .css({
-            fontSize: "30px",
-            color: "blue"
-        })
+    // ------Better used------
+    // alert($("h1").html());
+
+    // $("#codeUp")
+    //     .css({
+    //         fontSize: "20px",
+    //         color: "blue"
+    //     });
+
+    $("#liFirst").hover(
+        function() {
+            $(this).css({
+                backgroundColor: "black",
+                color: "red"
+        });
+        },
+        function() {
+            $(this).css({
+                backgroundColor: "inherit",
+                color: "orange"
+            });
+        }
+    );
+
+    const colors = ["red", "black", "blue", "green", "yellow"];
+    // const rand = colors[Math.floor(Math.random() * colors.length)];
+
+    $("li").click(function () {
+        $(this).css("backgroundColor", colors[Math.floor(Math.random() * colors.length)]);
+    });
+
 
 </script>
 
