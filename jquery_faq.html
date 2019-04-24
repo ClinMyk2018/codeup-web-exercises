@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="js/jquery-2.2.4.js">
+
+    <style>
+
+        .show {
+            visibility: hidden;
+        }
+        dd{
+            width: 80%;
+        }
+        dt{
+            width: 20%;
+            text-decoration: underline;
+        }
+        dl{
+            margin-left: 10%;
+        }
+        #show{
+            margin-left: 10%;
+            width: 10%;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Check Out These National Parks!</h1>
+<button id="show" type="submit">Show</button>
+<dl>
+    <dt class="highlight">Yosemite</dt>
+    <dd class="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea enim ipsa laudantium modi molestias nemo ratione sint suscipit totam. Eveniet ipsa iure nulla porro sed! Dignissimos earum minima repudiandae!</dd>
+    <dt class="highlight">Rockey Mountain</dt>
+    <dd class="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cumque deserunt dignissimos eius esse eum in ipsum nulla possimus praesentium quia quo, quod ratione repudiandae sapiente ullam voluptas voluptatem voluptatum?</dd>
+    <dt class="highlight">Glacier</dt>
+    <dd class=" show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus consequuntur, cupiditate eius magnam magni modi pariatur quis velit vero! Assumenda, cum earum ex harum laudantium neque repellat repellendus rerum.</dd>
+    <dt class="highlight">Zion</dt>
+    <dd class="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus architecto commodi distinctio esse et facere, facilis hic ipsam nihil placeat quas quo repudiandae sequi soluta temporibus ut vel. Dolorum, error.</dd>
+    <dt class="highlight">Olympic</dt>
+    <dd class="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, cumque fugit libero rem tempora unde voluptatem. Ad autem debitis, deserunt dolorem excepturi illo, magni placeat porro quis quisquam, sunt veniam?</dd>
+    <dt class="highlight">Grand Canyon</dt>
+    <dd class="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolore necessitatibus optio placeat possimus quas quisquam quo soluta tempore. Ab aperiam atque dolor eum explicabo officia pariatur rerum temporibus voluptatum.</dd>
+    <dt class="highlight">Arches</dt>
+    <dd class="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem, beatae culpa dolor eos explicabo fugiat incidunt, laboriosam nihil nobis nulla optio placeat praesentium quae quas, quibusdam repellendus sint unde!</dd>
+</dl>
+
+
+<script>
+
+
+    var highlight = {
+        'color': 'white',
+        'background-color': 'red',
+        'font-size': '20px'
+    };
+
+    var show = {
+        'visibility': 'visible'
+    };
+
+    $('#show').click(function() {
+        $('.show').show();
+    });
+
+
+</script>
+</body>
+</html>
