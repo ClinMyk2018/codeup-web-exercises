@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+
+    // const code = [ArrowUp = 0, ArrowDown = 0, ArrowLeft = 0, ArrowRight = 0, b = 0, a = 0, Enter = 0];
+    // console.log(code);
+    $(window).keydown(function(e){
+        console.log(typeof e.keyCode);});
+    //     if(e.key==="ArrowUp") ArrowUp = 1; if(e.key==="ArrowDown") ArrowDown = 1; if(e.key==="ArrowLeft") ArrowLeft = 1;
+    //     if(e.key==="ArrowRight") ArrowRight = 1; if(e.key==="b") b = 1; if(e.key==="a") a = 1; if(e.key==="Enter") Enter = 1;
+    //     easterEgg();
+    // });
+    //
+    function easterEgg(){
+        alert("Nice EasterEgg Bruh!");
+    }
+
+    function arraysEqual(arr1, arr2) {
+        if (arr1.length !== arr2.length)
+            return false;
+        for (var i = arr1.length; i--;) {
+            if (arr1[i] !== arr2[i])
+                return false;
+        }
+        return true;
+    }
+
+    var keyArray=[];
+    var Konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    $(window).keydown(function(e){
+        console.log(event.keyCode);
+        keyArray.push(event.keyCode);
+        if(arraysEqual(keyArray.slice(-Konami.length),Konami)){
+            easterEgg();
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
