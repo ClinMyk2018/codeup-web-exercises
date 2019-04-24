@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Konami Code</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+
+    </style>
+
 </head>
 <body>
 <h1>Konami Code</h1>
+<br>
+<br>
+<div id="addPic" style="width: 100%;"></div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
 
 
-    // const code = [ArrowUp = 0, ArrowDown = 0, ArrowLeft = 0, ArrowRight = 0, b = 0, a = 0, Enter = 0];
-    // console.log(code);
-    $(window).keydown(function(e){
+    $(document).keydown(function(e){
         console.log(typeof e.keyCode);});
-    //     if(e.key==="ArrowUp") ArrowUp = 1; if(e.key==="ArrowDown") ArrowDown = 1; if(e.key==="ArrowLeft") ArrowLeft = 1;
-    //     if(e.key==="ArrowRight") ArrowRight = 1; if(e.key==="b") b = 1; if(e.key==="a") a = 1; if(e.key==="Enter") Enter = 1;
-    //     easterEgg();
-    // });
-    //
+
+    const colors = ["red", "black", "blue", "green", "yellow"];
+
     function easterEgg(){
         alert("Nice EasterEgg Bruh!");
+        $("#addPic").append('<img src="eggGiphy.gif" alt="eggDrop">');
+        (function blink() {
+            $('h1').fadeOut(100).fadeIn(100, blink);
+            $('h1').css("color", colors[Math.floor(Math.random() * colors.length)]);
+        })();
+
+
     }
 
     function arraysEqual(arr1, arr2) {
