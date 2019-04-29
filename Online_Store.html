@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .tableBox{
+            position: inherit;
+            margin-left: 25%;
+
+        }
+        table {
+            text-align: left;
+            width: 65%;
+            height: 30%;
+            padding: 5%;
+            border: 5px double red;
+        }
+
+    </style>
+
+</head>
+<body style="text-align: center;">
+<div class="d-inline-flex p-2 mt-5">
+<h1 class="font-italic" >My Tool Store</h1>
+<button class="ml-5" id="refreshBt" type="submit" style=" margin-top: 5%; height: 5%;">Refresh Me!</button>
+</div>
+<div class="tableBox">
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+<script>
+    (function () {
+        "use strict";
+        // TODO: Create an ajax GET request for /data/inventory.json
+
+
+        $.ajax({
+            url: 'data/inventory.json',
+            dataType: 'json',
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var row = $('<tr><td>' + data[i].title + '</td><td>' + data[i].quantity + '</td>' +
+                        '<td>' + data[i].price + '</td><td>' + data[i].categories + '</td></tr>');
+                    $('#insertProducts').append(row);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error: ' + textStatus + ' - ' + errorThrown);
+            }
+        });
+
+
+        $(document).ready(function () {
+            $(document).on('click', '#refreshBt', function () {
+                $.ajax({
+                    url: 'data/inventory.json',
+                    type: "GET",
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#insertProducts').append(data);
+                        console.log(data);
+                    }
+                });
+            });
+        });
+    })();
+
+
+    // function newTableData(orders) {
+    //     var html = '';
+    //
+    //     //FOREACH function example
+    //     orders.forEach(function(order){
+    //         html += '<tr>';
+    //         html += '<td>' + order.title + '</td>';
+    //         html += '<td>' + order.quantity + '</td>';
+    //         html += '<td>' + order.price + '</td>';
+    //         html += '<td>' + order.categories + '</td>';
+    //         html += '</tr>';
+    //     });
+    //     return html;
+    // }
+    // $.ajax('/data/inventory.json').done(function (data) {
+    //
+    // }).fail(function () {
+    //     console.log("ERROR!")
+    // });
+
+    //=================================================================
+
+    // //FOR LOOP function example
+
+    // for (var i = 0; i < orders.length; i += 1) {
+    //     html += '<div class= "order">';
+    //     html += '<h2> Item #: ' + orders[i].ordersNumber> + '</h2>';
+    // }
+
+    //=================================================================
+</script>
+
+</body>
+</html>

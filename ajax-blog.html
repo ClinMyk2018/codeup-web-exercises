@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        /*In case needed*/
+
+        #aboutTxt{
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+<body style="background-color: olive;">
+
+<br>
+<div class="card bg-dark text-white">
+    <img class="card-img" src="eggGiphy.gif" alt="Card image">
+    <div class="card-img-overlay" id="posts">
+    </div>
+</div>
+
+
+
+<!--<div id="posts"></div>-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script>
+    (function () {
+        "use strict";
+
+        $.ajax({
+            url: 'data/blog.json',
+            dataType: 'json',
+            success: function (data) {
+                data.forEach (function (data) {
+                    var blogAdd = $('<h1 class="mt-5" style="color: whitesmoke; text-align: center;">' + data.title + '</h1><hr style="width: 30%;">' +
+                    '<p class="mx-3" style="color: red;">' + data.content + '</p>' + '<p> <span class="ml-5" id="aboutTxt">This is about:</span> ' + data.categories + '</p>'
+                    + '<span class="ml-5" style="font-size: .8rem; color: whitesmoke;"><em>This was written: </em>' + data.date+'</span>');
+                    $('#posts').append(blogAdd);
+                })
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error: ' + textStatus + ' - ' + errorThrown);
+            }
+        });
+
+    })();
+</script>
+
+</body>
+</html>

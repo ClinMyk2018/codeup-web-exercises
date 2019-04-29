@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Practice Request</title>
+</head>
+<body>
+<div id="searchingFor" style="text-align: center; margin-top: 30%; margin-left: 30%; position: absolute;">
+    <form class="formSearch">
+        <input class="form-control" type="search" placeholder="Search Away ..." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div id="results">
+
+    </div>
+</div>
+
+
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+
+    var charName = $.ajax("https://swapi.co/api/people/1/").done(function (data) {
+        console.log(data.name);
+    });
+
+    $('#results').text(charName);
+
+
+</script>
+</html>
