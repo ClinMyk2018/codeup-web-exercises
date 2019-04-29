@@ -20,11 +20,18 @@
             margin-left: 4%;
             width: 10%;
         }
+        ul li{
+            visibility: hidden;
+        }
+
 
     </style>
 </head>
 
 <body>
+
+<h1>"Would you like to sign up for our newsletter?"<span id="h1Hide">X</span></h1>
+
 <h1>Check Out These National Parks!</h1>
 <button id="yellow" type="button">Make Yellow?</button>
 
@@ -53,6 +60,12 @@
     <li>fact</li>
     <li>fact</li>
 </ul>
+
+<br>
+<h2 id="register"><a href="">Please Register For The Site!</a></h2>
+
+<br>
+<br>
 <!--<dl>-->
 <!--    <dt class="highlight">Yosemite</dt>-->
 <!--    <dd class="show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea enim ipsa laudantium modi molestias nemo ratione sint suscipit totam. Eveniet ipsa iure nulla porro sed! Dignissimos earum minima repudiandae!</dd>-->
@@ -85,21 +98,50 @@
     //     font: 'bold'
     // };
 
+    $('li').hide();
+
     $('#yellow').on("click", function() {
         $('.yosemitePark').children('li').last().css("background", "yellow");
         $('.rockeyPark').children('li').last().css("background", "yellow");
         $('.olympicPark').children('li').last().css("background", "yellow");
     });
-    $('.rpark').on("click", function() {
-            $('.rockeyPark').children('li').css("fontWeight", "bold");
+
+    // |
+    // |
+    // V    I DO NOT UNDERSTAND WHAT SLIDE IS ASKED HERE?
+
+    $('.ypark').click(function() {
+        $('li').show();
+        $('.yosemitePark').children('li').css({
+            fontWeight: "bold",
+            visibility: "visible"
+        });
     });
-    $('.ypark').on("click", function() {
-        $('.yosemitePark').children('li').css("fontWeight", "bold");
-    });
-    $('.opark').on("click", function() {
-        $('.olympicPark').children('li').css("fontWeight", "bold");
+    $('.rpark').click(function() {
+        $('li').show();
+            $('.rockeyPark').children('li').css({
+                fontWeight: "bold",
+                visibility: "visible"
+            })
     });
 
+    $('.opark').click(function() {
+        $('ul').show().delay(4000).slideUp( 1000 );
+        $('.olympicPark').children('li').css({
+            fontWeight: "bold",
+            visibility: "visible"
+        });
+
+    });
+
+
+    $('#h1Hide').on('click', function(){
+        $('h1').hide()
+
+    });
+
+    $('#register').hide();
+    $('#register').delay(8000).fadeIn();
 
 
 </script>
