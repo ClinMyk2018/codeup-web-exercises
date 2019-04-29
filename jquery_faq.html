@@ -29,24 +29,24 @@
 <button id="yellow" type="button">Make Yellow?</button>
 
 <h1>Parks List</h1>
-<h3 class="park">Yosemite</h3>
-<ul class="national-parks">
+<h3 class="ypark">Yosemite</h3>
+<ul class="yosemitePark">
     <li>fact</li>
     <li>fact</li>
     <li>fact</li>
     <li>fact</li>
     <li>fact</li>
 </ul>
-<h3 class="park">Rockey Mountain</h3>
-<ul class="national-parks">
+<h3 class="rpark">Rockey Mountain</h3>
+<ul class="rockeyPark">
     <li>fact</li>
     <li>fact</li>
     <li>fact</li>
     <li>fact</li>
     <li>fact</li>
 </ul>
-<h3 class="park">Olympic</h3>
-<ul class="national-parks">
+<h3 class="opark">Olympic</h3>
+<ul class="olympicPark">
     <li>fact</li>
     <li>fact</li>
     <li>fact</li>
@@ -86,14 +86,18 @@
     // };
 
     $('#yellow').on("click", function() {
-        $('ul').each(function() {
-            $('li').css("background", "yellow");
-            })
+        $('.yosemitePark').children('li').last().css("background", "yellow");
+        $('.rockeyPark').children('li').last().css("background", "yellow");
+        $('.olympicPark').children('li').last().css("background", "yellow");
     });
-    $('.park').on("click", function() {
-        $('ul').each(function() {
-            $('li').css("fontWeight", "bold");
-        })
+    $('.rpark').on("click", function() {
+            $('.rockeyPark').children('li').css("fontWeight", "bold");
+    });
+    $('.ypark').on("click", function() {
+        $('.yosemitePark').children('li').css("fontWeight", "bold");
+    });
+    $('.opark').on("click", function() {
+        $('.olympicPark').children('li').css("fontWeight", "bold");
     });
 
 
