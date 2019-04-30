@@ -14,16 +14,18 @@
         #aboutTxt{
             text-decoration: underline;
         }
+        /*.txtCntr{*/
+        /*    visibility: hidden;*/
+        /*}*/
 
     </style>
 
 </head>
 <body style="background-color: olive;">
 
-<br>
 <div class="card bg-dark text-white">
-    <img class="card-img" src="eggGiphy.gif" alt="Card image">
-    <div class="card-img-overlay" id="posts">
+    <img class="card-img" src="eggDrop.png" height= "700px" alt="Card image">
+    <div class="card-img-overlay txtCntr" id="posts">
     </div>
 </div>
 
@@ -45,14 +47,16 @@
     (function () {
         "use strict";
 
+        $(".txtCntr").hide(3000).fadeIn(2000);
+
         $.ajax({
             url: 'data/blog.json',
             dataType: 'json',
             success: function (data) {
                 data.forEach (function (data) {
                     var blogAdd = $('<h1 class="mt-5" style="color: whitesmoke; text-align: center;">' + data.title + '</h1><hr style="width: 30%;">' +
-                    '<p class="mx-3" style="color: red;">' + data.content + '</p>' + '<p> <span class="ml-5" id="aboutTxt">This is about:</span> ' + data.categories + '</p>'
-                    + '<span class="ml-5" style="font-size: .8rem; color: whitesmoke;"><em>This was written: </em>' + data.date+'</span>');
+                    '<p class="mx-3 para" style="color: orangered;">' + data.content + '</p>' + '<p> <span class="ml-5" id="aboutTxt">This is about:</span> ' + data.categories + '</p>'
+                    + '<span class="ml-5" style="font-size: .8rem; color: red;"><em>This was written: </em>' + data.date+'</span>');
                     $('#posts').append(blogAdd);
                 })
             },

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joke AND Quote</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: red;
+        }
+        .titleTop{
+            text-align: center;
+            font-size: 4rem;
+            color: red;
+            background-color: yellow;
+            font-family: cursive;
+        }
+        .row{
+            margin-left: 3%;
+        }
+        #newDrop{
+            border: 5px double yellow;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<header>
+    <div class="titleTop mx-auto py-3 mb-5">Joke & Quote</div>
+</header>
+
+<div class="row mx-auto">
+    <div class="col-3 mt-5 d-flex justify-content-end">
+        <button class="jokeButton" type="button">New Joke</button>
+    </div>
+    <div class="col-6 mt-5" id="newDrop">
+
+    </div>
+    <div class="col-3 mt-5">
+        <button class="quoteButton" type="button">New Quote</button>
+    </div>
+
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script>
+
+
+    //Chuck Norris Joke Function AJAX Request//
+    var chuck = $.ajax({
+        url: 'http://api.icndb.com/jokes/random',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            var newJoke = $('<p style="color: white;">' + data.value.joke + '</p');
+                        console.log(newJoke);
+                        return newJoke;
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('Error: ' + textStatus + ' - ' + errorThrown);
+        }
+    });
+
+    //Programmer Quote Function AJAX Request//
+    var programmerQuote = $.ajax({
+        url: 'http://quotes.stormconsultancy.co.uk/random.json',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            var newQuote = $('<h1 style="color: white;">' + data.quote + '</h1' +
+                            '<p>' + data.author +'</p>');
+                        console.log(newQuote);
+                        return newQuote;
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('Error: ' + textStatus + ' - ' + errorThrown);
+        }
+    });
+
+    //Joke Button Function//
+    $('.jokeButton').on('click', function(){
+        $('#newDrop').append.innerHTML(chuck);
+    });
+
+    //Quote Button Function//
+    $('.quoteButton').on('click', function(){
+        $('#newDrop').append(programmerQuote);
+    });
+
+
+</script>
+
+
+</body>
+</html>
