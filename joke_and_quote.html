@@ -7,21 +7,28 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-        body{
+        body {
             background-color: red;
         }
-        .titleTop{
+
+        .titleTop {
             text-align: center;
             font-size: 4rem;
             color: red;
             background-color: yellow;
             font-family: cursive;
         }
-        .row{
+
+        .row {
             margin-left: 3%;
+            height: 300px;
         }
-        #newDrop{
+
+        #newDrop {
             border: 5px double yellow;
+        }
+        .quoteButton{
+            height: 300px;
         }
 
 
@@ -59,16 +66,15 @@
 
 <script>
 
-
     //Chuck Norris Joke Function AJAX Request//
     var chuck = $.ajax({
         url: 'http://api.icndb.com/jokes/random',
         dataType: 'json',
         success: function (data) {
             console.log(data);
-            var newJoke = $('<p style="color: white;">' + data.value.joke + '</p');
-                        console.log(newJoke);
-                        return newJoke;
+            var newJoke = $('<p style="color: white;">' + data.value.joke + '</p>');
+            console.log(newJoke);
+            $('#newDrop').append(newJoke);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert('Error: ' + textStatus + ' - ' + errorThrown);
@@ -81,10 +87,10 @@
         dataType: 'json',
         success: function (data) {
             console.log(data);
-            var newQuote = $('<h1 style="color: white;">' + data.quote + '</h1' +
-                            '<p>' + data.author +'</p>');
-                        console.log(newQuote);
-                        return newQuote;
+            var newQuote = $('<p style="color: white;">' + data.quote + '</p>' +
+                '<p>' + data.author + '</p>');
+            console.log(newQuote);
+            $('#newDrop').append(newQuote);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert('Error: ' + textStatus + ' - ' + errorThrown);
@@ -92,12 +98,14 @@
     });
 
     //Joke Button Function//
-    $('.jokeButton').on('click', function(){
-        $('#newDrop').append.innerHTML(chuck);
+    $('.jokeButton').on('click', function () {
+        if($("#newDrop").load(location.href + "#newDrop")) {
+            $('#newDrop').append(chuck);
+        }
     });
 
     //Quote Button Function//
-    $('.quoteButton').on('click', function(){
+    $('.quoteButton').on('click', function () {
         $('#newDrop').append(programmerQuote);
     });
 
