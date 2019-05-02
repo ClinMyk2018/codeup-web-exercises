@@ -51,15 +51,15 @@
 <body>
 
 <nav class="topNav">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand logo" href="#"><img src="CloudLogo.png" style="height: 50px; width: 50px;"
                                                    alt="LOGO"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop"
+                aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div class="collapse navbar-collapse" id="navbarTop">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -80,9 +80,9 @@
 </nav>
 
 <!--// Replace with a randomized picture \\-->
-<div class="addSpace">
+<div class="addSpace d-none d-sm-none d-md-block">
     <div class="bg-dark mt-1 mx-4">
-        <h1 class="text-white" style="text-align: center; border: 5px double lightslategray;">Welcome, Lets Check The
+        <h1 class="text-white" style="text-align: center; border: 5px double lightslategray;">Welcome, Let's Check The
             Weather!</h1>
 
     </div>
@@ -116,6 +116,10 @@
     <div class="tab-content" id="pills-tabContent">
 
         <!--        Today    -->
+
+        <!--        ==================================-->
+        <!--        POSSIBLY ADD HOURLY INSTEAD !!!!!!-->
+        <!--        ==================================-->
 
         <div class="tab-pane fade show active" id="tabs-Today" role="tabpanel" aria-labelledby="Today-tab">
             <!--        Today Top-->
@@ -330,6 +334,25 @@
 <div class="mapCon mt-1 mx-4" id='map'></div>
 <br>
 <br>
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBottom"
+                aria-controls="navbarBottom" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarBottom">
+            <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Apply</a>
+                </li>
+            </ul>
+</nav>
 
 <!--//Script Below-->
 <!--==================================================================================================-->
@@ -427,16 +450,16 @@
         //Daily Icons
 
         const icons = {
-            "clear-day": "icon/Sun.svg",
-            "clear-night": "icon/Moon-Full.svg",
-            "rain": "icon/Cloud-Rain.svg",
-            "snow": "icon/Snowflake.svg",
-            "sleet": "icon/Snowflake.svg",
-            "wind": "icon/Wind.svg",
-            "fog": "icon/Cloud-Fog.svg",
-            "cloudy": "icon/Cloud.svg",
-            "partly-cloudy-day": "icon/Cloud-Sun.svg",
-            "partly-cloudy-night": "icon/Cloud-Moon.svg"
+            "clear-day": "icon-Sun.svg",
+            "clear-night": "icon-Moon-Full.svg",
+            "rain": "icon-Cloud-Rain.svg",
+            "snow": "icon-Snowflake.svg",
+            "sleet": "icon-Snowflake.svg",
+            "wind": "icon-Wind.svg",
+            "fog": "icon-Cloud-Fog.svg",
+            "cloudy": "icon-Cloud.svg",
+            "partly-cloudy-day": "icon-Cloud-Sun.svg",
+            "partly-cloudy-night": "icon-Cloud-Moon.svg"
         };
 
         $.get(corsUrl + darkSkyUrl + darkSkyApi + "/" + lat + "," + lng).done(function(data) {
@@ -552,7 +575,7 @@
                 '<img src="' + icons[zero.icon] + '">' +
                 '<div>Clouds: ' + zero.cloudCover + '</div>' +
                 '<div>WX Condition: ' + zero.precipType + '</div>' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div >Wind Dir: ' + zero.windBearing + '°' + '</div>' +
                 '<div>Wind Speed: ' + parseInt(zwndSpd) + 'kt' + '</div>' +
                 '<div>Visibility: ' + parseInt(zvisi) + 'SM' + '</div>';
 
@@ -564,7 +587,7 @@
                 '<img src="' + icons[one.icon] + '">' +
                 '<div>Clouds: ' + one.cloudCover + '</div>' +
                 '<div>WX Condition: ' + one.precipType + '</div>' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div >Wind Dir: ' + one.windBearing + '°' + '</div>' +
                 '<div>Wind Speed: ' + parseInt(owndSpd) + 'kt' + '</div>' +
                 '<div>Visibility: ' + parseInt(ovisi) + 'SM' + '</div>';
 
@@ -576,7 +599,7 @@
                 '<img src="' + icons[two.icon] + '">' +
                 '<div>Clouds: ' + two.cloudCover + '</div>' +
                 '<div>WX Condition: ' + two.precipType + '</div>' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div >Wind Dir: ' + two.windBearing + '°' + '</div>' +
                 '<div>Wind Speed: ' + parseInt(twndSpd) + 'kt' + '</div>' +
                 '<div>Visibility: ' + parseInt(tvisi) + 'SM' + '</div>';
 
@@ -588,7 +611,7 @@
                 '<img src="' + icons[three.icon] + '">' +
                 '<div>Clouds: ' + three.cloudCover + '</div>' +
                 '<div>WX Condition: ' + three.precipType + '</div>' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div >Wind Dir: ' + three.windBearing + '°' + '</div>' +
                 '<div>Wind Speed: ' + parseInt(thwndSpd) + 'kt' + '</div>' +
                 '<div>Visibility: ' + parseInt(thvisi) + 'SM' + '</div>';
 
@@ -600,7 +623,7 @@
                 '<img src="' + icons[four.icon] + '">' +
                 '<div>Clouds: ' + four.cloudCover + '</div>' +
                 '<div>WX Condition: ' + four.precipType + '</div>' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div >Wind Dir: ' + four.windBearing + '°' + '</div>' +
                 '<div>Wind Speed: ' + parseInt(fowndSpd) + 'kt' + '</div>' +
                 '<div>Visibility: ' + parseInt(fovisi) + 'SM' + '</div>';
 
@@ -612,7 +635,7 @@
                 '<img src="' + icons[five.icon] + '">' +
                 '<div>Clouds: ' + five.cloudCover + '</div>' +
                 '<div>WX Condition: ' + five.precipType + '</div>' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div >Wind Dir: ' + five.windBearing + '°' + '</div>' +
                 '<div>Wind Speed: ' + parseInt(fiwndSpd) + 'kt' + '</div>' +
                 '<div>Visibility: ' + parseInt(fivisi) + 'SM' + '</div>';
 
@@ -624,7 +647,7 @@
                 '<img src="' + icons[six.icon] + '">' +
                 '<div>Clouds: ' + six.cloudCover + '</div>' +
                 '<div>WX Condition: ' + six.precipType + '</div>' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div >Wind Dir: ' + six.windBearing + '°' + '</div>' +
                 '<div>Wind Speed: ' + parseInt(siwndSpd) + 'kt' + '</div>' +
                 '<div>Visibility: ' + parseInt(sivisi) + 'SM' + '</div>';
 
