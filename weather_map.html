@@ -34,6 +34,7 @@
             border: 2px solid white;
             text-align: center;
         }
+
         .colcurdayimg {
             border: 2px solid white;
         }
@@ -41,7 +42,7 @@
         #map {
             margin-top: 2px;
             border: 5px double white;
-            height: 500px;
+            height: 300px;
         }
 
 
@@ -49,6 +50,8 @@
 
 </head>
 <body>
+
+<!--        Top Nav Bar     -->
 
 <nav class="topNav">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -79,7 +82,8 @@
 
 </nav>
 
-<!--// Replace with a randomized picture \\-->
+<!--        Welcome Sign    =======================       // Replace with a randomized picture? \\ -->
+
 <div class="addSpace d-none d-sm-none d-md-block">
     <div class="bg-dark mt-1 mx-4">
         <h1 class="text-white" style="text-align: center; border: 5px double lightslategray;">Welcome, Let's Check The
@@ -87,6 +91,21 @@
 
     </div>
 </div>
+
+
+<!--        Map Below      -->
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet'
+      href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
+      type='text/css'/>
+<div class="mapCon mt-1 mx-4" id='map'></div>
+
+
+
+<!--        =====================================-->
+<!--        NEW TAB WITH WINDY FORECAST MAP!!!???-->
+<!--        =====================================-->
 
 <div>
 
@@ -117,15 +136,11 @@
 
         <!--        Today    -->
 
-        <!--        ==================================-->
-        <!--        POSSIBLY ADD HOURLY INSTEAD !!!!!!-->
-        <!--        ==================================-->
-
         <div class="tab-pane fade show active" id="tabs-Today" role="tabpanel" aria-labelledby="Today-tab">
             <!--        Today Top-->
             <div class='row mx-4 bg-dark text-white row3Day'>
                 <div class="col-6 col3Day d-inline bg-dark text-white">
-                    <strong class="" style="font-size: 1.5rem;">Current</strong>
+                    <strong class="" style="font-size: 1.5rem;">Current / 3 Hour Forecast</strong>
                 </div>
                 <div class="col-6 col3Day d-inline bg-dark text-white">
                     <strong class="" style="font-size: 1.5rem;">Summary</strong>
@@ -136,15 +151,22 @@
 
                 <div class="col-6 colcurdayimg d-inline bg-dark text-white">
                     <div class="row">
-                        <div class="col-12 dailyIcon py-2">
+                        <div class="col-3">
+                            <div class="row">
+                                <div class="col-12 summaryCurrent my-3" style="font-size: 1rem;"></div>
+                                <div class="col-12 todayCurrent" style="font-size: .6rem;"></div>
+                            </div>
                         </div>
-                        <div class="col-12 summaryCurrent mt-3" style="font-size: 1rem;">
+                        <div class="col-9">
+                            <div class="row">
+                                <div class="col hour1" style="font-size: .6rem;"></div>
+                                <div class="col hour2" style="font-size: .6rem;"></div>
+                                <div class="col hour3" style="font-size: .6rem;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col3Day summaryWeek py-5" style="font-style: italic; font-size: 1rem;">
-
-                </div>
+                <div class="col-6 col3Day summaryWeek py-5" style="font-style: italic; font-size: 1rem;"></div>
             </div>
         </div>
 
@@ -325,33 +347,37 @@
     </div>
 </div>
 
-<!--        Map Below      -->
+<!--&lt;!&ndash;        Map Below      &ndash;&gt;-->
 
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
-<link rel='stylesheet'
-      href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
-      type='text/css'/>
-<div class="mapCon mt-1 mx-4" id='map'></div>
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>-->
+<!--<link rel='stylesheet'-->
+<!--      href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'-->
+<!--      type='text/css'/>-->
+<!--<div class="mapCon mt-1 mx-4" id='map'></div>-->
 <br>
 <br>
- <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBottom"
-                aria-controls="navbarBottom" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarBottom">
-            <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Apply</a>
-                </li>
-            </ul>
+<!--        Footer Nav Bar      -->
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBottom"
+            aria-controls="navbarBottom" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarBottom">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Apply</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 <!--//Script Below-->
@@ -377,7 +403,7 @@
     (function () {
         "use strict";
 
-        var dateObject = new Date(1556773200 * 1000);
+        var dateObject = new Date(1556802000 * 1000);
         console.log(dateObject.toString());
 
 
@@ -399,18 +425,35 @@
         mapboxgl.accessToken = yeKxoBpaM;
         var map = new mapboxgl.Map({
             container: 'map',
+            hash: true,
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [-98.4936, 29.4241],
-            zoom: 10
+            zoom: 9
         });
 
         map.addControl(new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl,
             result: mapboxgl
-        }));
+        }).on('result',function(data){
+            lat = data.result.center[1];
+            lng = data.result.center[0];
+            setDailies();
+            })
+        );
 
-        var geocodeResultMapBox = 'https' + ':' + '//' + 'docs.mapbox.com/search-playground/' + '#' + '{%22url%22:%22san%20antonio%22,%22index%22:%22mapbox.places%22,%22staging%22:false,%22onCountry%22:false,%22onType%22:false,%22onProximity%22:false,%22onBBOX%22:false,%22onLimit%22:false,%22onLanguage%22:true,%22countries%22:[],%22proximity%22:%22%22,%22typeToggle%22:{%22country%22:false,%22region%22:false,%22district%22:false,%22postcode%22:false,%22locality%22:false,%22place%22:false,%22neighborhood%22:false,%22address%22:false,%22poi%22:false},%22types%22:[],%22bbox%22:%22%22,%22limit%22:%22%22,%22autocomplete%22:true,%22languages%22:[],%22languageStrict%22:false,%22onDebug%22:false,%22selectedLayer%22:%22%22,%22debugClick%22:{},%22localsearch%22:false,%22query%22:%22san%20anton%22}';
+        // // Getting Lat / Lng From URL \\
+        //
+        // var urlLat = $(location).attr('href'),
+        //     partsLat = urlLat.split("/"),
+        //     last_partLat = partsLat[partsLat.length-2];
+        //     console.log(last_partLat);
+        //
+        // var urlLng = $(location).attr('href'),
+        //             partsLng = urlLng.split("/"),
+        //             last_partLng = partsLng[partsLng.length-1];
+        //             console.log(last_partLng);
+
 
         // MARKER FOR MAP
 
@@ -431,253 +474,323 @@
         // console.log(newCoordinates);
 
         // reverseGeoCode Below....?
-        reverseGeocode(geocodeResultMapBox, accessToken).then(function (address) {
-            geocode(address, yeKxoBpaM).then(function (coor) {
-                console.log(coor);
-                return coor;
-            })
-        });
-
-        ///////////////////////////
-        var lat = 29.4241;
-        var lng = -98.4936;
-        //\\\\\\\\\\\\\\\\\\\\\\\\\
-
-        //====================
-
-        //====================
-
-        //Daily Icons
-
-        const icons = {
-            "clear-day": "icon-Sun.svg",
-            "clear-night": "icon-Moon-Full.svg",
-            "rain": "icon-Cloud-Rain.svg",
-            "snow": "icon-Snowflake.svg",
-            "sleet": "icon-Snowflake.svg",
-            "wind": "icon-Wind.svg",
-            "fog": "icon-Cloud-Fog.svg",
-            "cloudy": "icon-Cloud.svg",
-            "partly-cloudy-day": "icon-Cloud-Sun.svg",
-            "partly-cloudy-night": "icon-Cloud-Moon.svg"
-        };
-
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + "/" + lat + "," + lng).done(function(data) {
-            var icon = '<img src="' + icons[data.currently.icon] + '">';
-            $('.dailyIcon').append(icon);
-        });
-
-        //====================
-
-
-        //====================
-
-        //Daily Titles
-
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            var dayTitle1 = new Date(data.daily.data[0].time * 1000);
-            $('.todayTitle').append(dayTitle1)
-        });
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            var dayTitle2 = new Date(data.daily.data[1].time * 1000);
-            $('.tomorrowTitle').append(dayTitle2)
-        });
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            var dayTitle3 = new Date(data.daily.data[2].time * 1000);
-            $('.secondDayTitle').append(dayTitle3)
-        });
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            var dayTitle4 = new Date(data.daily.data[3].time * 1000);
-            $('.thirdDayTitle').append(dayTitle4)
-        });
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            var dayTitle5 = new Date(data.daily.data[4].time * 1000);
-            $('.fourthDayTitle').append(dayTitle5)
-        });
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            var dayTitle6 = new Date(data.daily.data[5].time * 1000);
-            $('.fifthDayTitle').append(dayTitle6)
-        });
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            var dayTitle7 = new Date(data.daily.data[6].time * 1000);
-            $('.sixthDayTitle').append(dayTitle7)
-        });
-
-        //====================
-
-        //====================
-
-        //Daily WX Info
-
-        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-            console.log(data);
-
-            // Array fix for daily's \\
-            let cur = data.currently;
-            let ctmpH = cur.apparentTemperature;
-            let cDp = cur.dewPoint;
-            let cwndSpd = cur.windSpeed;
-            let cvisi = cur.visibility;
-            let zero = data.daily.data[0];
-            let ztmpH = zero.apparentTemperatureHigh;
-            let ztmpL = zero.apparentTemperatureLow;
-            let zwndSpd = zero.windSpeed;
-            let zvisi = zero.visibility;
-            let one = data.daily.data[1];
-            let otmpH = one.apparentTemperatureHigh;
-            let otmpL = one.apparentTemperatureLow;
-            let owndSpd = one.windSpeed;
-            let ovisi = one.visibility;
-            let two = data.daily.data[2];
-            let ttmpH = two.apparentTemperatureHigh;
-            let ttmpL = two.apparentTemperatureLow;
-            let twndSpd = two.windSpeed;
-            let tvisi = two.visibility;
-            let three = data.daily.data[3];
-            let thtmpH = three.apparentTemperatureHigh;
-            let thtmpL = three.apparentTemperatureLow;
-            let thwndSpd = three.windSpeed;
-            let thvisi = three.visibility;
-            let four = data.daily.data[4];
-            let fotmpH = four.apparentTemperatureHigh;
-            let fotmpL = four.apparentTemperatureLow;
-            let fowndSpd = four.windSpeed;
-            let fovisi = four.visibility;
-            let five = data.daily.data[5];
-            let fitmpH = five.apparentTemperatureHigh;
-            let fitmpL = five.apparentTemperatureLow;
-            let fiwndSpd = five.windSpeed;
-            let fivisi = five.visibility;
-            let six = data.daily.data[6];
-            let sitmpH = six.apparentTemperatureHigh;
-            let sitmpL = six.apparentTemperatureLow;
-            let siwndSpd = six.windSpeed;
-            let sivisi = six.visibility;
-
-
-
-            // Hard Code Daily's \\
-            var resultsC = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ctmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">DP: ' + '</div>' + parseInt(cDp) + '<br>' +
-                '<img src="' + icons[cur.icon] + '">' +
-                '<div>Clouds: ' + cur.cloudCover + '</div>' +
-                '<div class=" d-inline">Precip Prob : ' + cur.precipProbability + '</div>' + '%' +
-                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(cwndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(cvisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.todayCurrent').append(resultsC);
-            var results0 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ztmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ztmpL) + '<br>' +
-                '<img src="' + icons[zero.icon] + '">' +
-                '<div>Clouds: ' + zero.cloudCover + '</div>' +
-                '<div>WX Condition: ' + zero.precipType + '</div>' +
-                '<div >Wind Dir: ' + zero.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(zwndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(zvisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.today').append(results0);
-            var results1 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(otmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(otmpL) + '<br>' +
-                '<img src="' + icons[one.icon] + '">' +
-                '<div>Clouds: ' + one.cloudCover + '</div>' +
-                '<div>WX Condition: ' + one.precipType + '</div>' +
-                '<div >Wind Dir: ' + one.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(owndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(ovisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.tomorrow').append(results1);
-            var results2 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ttmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ttmpL) + '<br>' +
-                '<img src="' + icons[two.icon] + '">' +
-                '<div>Clouds: ' + two.cloudCover + '</div>' +
-                '<div>WX Condition: ' + two.precipType + '</div>' +
-                '<div >Wind Dir: ' + two.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(twndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(tvisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.secondDay').append(results2);
-            var results3 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(thtmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(thtmpL) + '<br>' +
-                '<img src="' + icons[three.icon] + '">' +
-                '<div>Clouds: ' + three.cloudCover + '</div>' +
-                '<div>WX Condition: ' + three.precipType + '</div>' +
-                '<div >Wind Dir: ' + three.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(thwndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(thvisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.thirdDay').append(results3);
-            var results4 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fotmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fotmpL) + '<br>' +
-                '<img src="' + icons[four.icon] + '">' +
-                '<div>Clouds: ' + four.cloudCover + '</div>' +
-                '<div>WX Condition: ' + four.precipType + '</div>' +
-                '<div >Wind Dir: ' + four.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(fowndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(fovisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.fourthDay').append(results4);
-            var results5 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fitmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fitmpL) + '<br>' +
-                '<img src="' + icons[five.icon] + '">' +
-                '<div>Clouds: ' + five.cloudCover + '</div>' +
-                '<div>WX Condition: ' + five.precipType + '</div>' +
-                '<div >Wind Dir: ' + five.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(fiwndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(fivisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.fifthDay').append(results5);
-            var results6 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(sitmpH) +
-                ' / ' +
-                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(sitmpL) + '<br>' +
-                '<img src="' + icons[six.icon] + '">' +
-                '<div>Clouds: ' + six.cloudCover + '</div>' +
-                '<div>WX Condition: ' + six.precipType + '</div>' +
-                '<div >Wind Dir: ' + six.windBearing + '°' + '</div>' +
-                '<div>Wind Speed: ' + parseInt(siwndSpd) + 'kt' + '</div>' +
-                '<div>Visibility: ' + parseInt(sivisi) + 'SM' + '</div>';
-
-            //The request to fill the daily boxes
-            $('.sixthDay').append(results6);
-
-            $('.summaryCurrent').append(data.currently.summary);
-            $('.summaryWeek').append(data.daily.summary);
-
-        });
-
-        //====================
-
-
-        // $.ajax({
-        //     url: "https://api.darksky.net/forecast/ykSkraD/37.8267,-122.4233",
-        //     dataType: 'json',
-        //     success: function (data) {
-        //         data.forEach(function (data) {
-        //             console.log(data);
-        //             var blogAdd = $('<h1>' + data.title + '</h1>');
-        //             $('#posts').append(blogAdd);
-        //         })
-        //     },
-        //     error: function (jqXHR, textStatus, errorThrown) {
-        //         alert('Error: ' + textStatus + ' - ' + errorThrown);
-        //     }
+        // reverseGeocode(geocodeResultMapBox, accessToken).then(function (address) {
+        //     geocode(address, yeKxoBpaM).then(function (coor) {
+        //         console.log(coor);
+        //         return coor;
+        //     })
         // });
 
 
+        // Lat and Lng Needed For Forecast! \\
+
+        ///////////////////////////
+        var lat=29.4241;
+        var lng=-98.4936;
+        console.log(lat);
+        console.log(lng);
+        //\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        //====================
+        function setDailies() {
+            //====================
+
+            //Daily Icons
+
+            const icons = {
+                "clear-day": "icon-Sun.svg",
+                "clear-night": "icon-Moon-Full.svg",
+                "rain": "icon-Cloud-Rain.svg",
+                "snow": "icon-Snowflake.svg",
+                "sleet": "icon-Snowflake.svg",
+                "wind": "icon-Wind.svg",
+                "fog": "icon-Cloud-Fog.svg",
+                "cloudy": "icon-Cloud.svg",
+                "partly-cloudy-day": "icon-Cloud-Sun.svg",
+                "partly-cloudy-night": "icon-Cloud-Moon.svg"
+            };
+
+            //====================
+
+            //Daily Titles
+
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                var dayTitle1 = new Date(data.daily.data[0].time * 1000);
+                $('.todayTitle').append(dayTitle1)
+            });
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                var dayTitle2 = new Date(data.daily.data[1].time * 1000);
+                $('.tomorrowTitle').append(dayTitle2)
+            });
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                var dayTitle3 = new Date(data.daily.data[2].time * 1000);
+                $('.secondDayTitle').append(dayTitle3)
+            });
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                var dayTitle4 = new Date(data.daily.data[3].time * 1000);
+                $('.thirdDayTitle').append(dayTitle4)
+            });
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                var dayTitle5 = new Date(data.daily.data[4].time * 1000);
+                $('.fourthDayTitle').append(dayTitle5)
+            });
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                var dayTitle6 = new Date(data.daily.data[5].time * 1000);
+                $('.fifthDayTitle').append(dayTitle6)
+            });
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                var dayTitle7 = new Date(data.daily.data[6].time * 1000);
+                $('.sixthDayTitle').append(dayTitle7)
+            });
+
+            //====================
+
+
+            //====================
+
+            //Daily WX Info
+
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+                console.log(data);
+
+                // Array fix for hourly's \\
+                let Hour1 = data.hourly.data[0];
+                let HDateTime = new Date(Hour1.time * 1000);
+                let H1tmpH = Hour1.apparentTemperature;
+                let H1Dp = Hour1.dewPoint;
+                let H1wndSpd = Hour1.windSpeed;
+                let H1visi = Hour1.visibility;
+                let Hour2 = data.hourly.data[1];
+                let H2DateTime = new Date(Hour2.time * 1000);
+                let H2tmpH = Hour2.apparentTemperature;
+                let H2Dp = Hour2.dewPoint;
+                let H2wndSpd = Hour2.windSpeed;
+                let H2visi = Hour2.visibility;
+                let Hour3 = data.hourly.data[2];
+                let H3DateTime = new Date(Hour3.time * 1000);
+                let H3tmpH = Hour3.apparentTemperature;
+                let H3Dp = Hour3.dewPoint;
+                let H3wndSpd = Hour3.windSpeed;
+                let H3visi = Hour3.visibility;
+
+                // Array fix for daily's \\
+                let cur = data.currently;
+                let ctmpH = cur.apparentTemperature;
+                let cDp = cur.dewPoint;
+                let cwndSpd = cur.windSpeed;
+                let cvisi = cur.visibility;
+                let zero = data.daily.data[0];
+                let ztmpH = zero.apparentTemperatureHigh;
+                let ztmpL = zero.apparentTemperatureLow;
+                let zwndSpd = zero.windSpeed;
+                let zvisi = zero.visibility;
+                let one = data.daily.data[1];
+                let otmpH = one.apparentTemperatureHigh;
+                let otmpL = one.apparentTemperatureLow;
+                let owndSpd = one.windSpeed;
+                let ovisi = one.visibility;
+                let two = data.daily.data[2];
+                let ttmpH = two.apparentTemperatureHigh;
+                let ttmpL = two.apparentTemperatureLow;
+                let twndSpd = two.windSpeed;
+                let tvisi = two.visibility;
+                let three = data.daily.data[3];
+                let thtmpH = three.apparentTemperatureHigh;
+                let thtmpL = three.apparentTemperatureLow;
+                let thwndSpd = three.windSpeed;
+                let thvisi = three.visibility;
+                let four = data.daily.data[4];
+                let fotmpH = four.apparentTemperatureHigh;
+                let fotmpL = four.apparentTemperatureLow;
+                let fowndSpd = four.windSpeed;
+                let fovisi = four.visibility;
+                let five = data.daily.data[5];
+                let fitmpH = five.apparentTemperatureHigh;
+                let fitmpL = five.apparentTemperatureLow;
+                let fiwndSpd = five.windSpeed;
+                let fivisi = five.visibility;
+                let six = data.daily.data[6];
+                let sitmpH = six.apparentTemperatureHigh;
+                let sitmpL = six.apparentTemperatureLow;
+                let siwndSpd = six.windSpeed;
+                let sivisi = six.visibility;
+
+
+                //Hourly WX Info
+
+                // Hard Code Hourly \\
+
+                // Hourly 1 \\
+                var resultsH1 = '<span style="font-size: 11px;">' + HDateTime + '</span>' +
+                    '<hr>' +
+                    '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(H1tmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">DP: ' + '</div>' + parseInt(H1Dp) + '<br>' +
+                    '<img src="' + icons[Hour1.icon] + '">' +
+                    '<div>Clouds: ' + Hour1.cloudCover + '</div>' +
+                    '<div class=" d-inline">Precip Prob : ' + Hour1.precipProbability + '</div>' + '%' +
+                    '<div >Wind Dir: ' + Hour1.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(H1wndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(H1visi) + 'SM' + '</div>';
+
+                //The request to hour1 box
+                $('.hour1').append(resultsH1);
+
+                // Hourly 2 \\
+                var resultsH2 = '<span style="font-size: 11px;">' + H2DateTime + '</span>' +
+                    '<hr>' +
+                    '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(H2tmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">DP: ' + '</div>' + parseInt(H2Dp) + '<br>' +
+                    '<img src="' + icons[Hour2.icon] + '">' +
+                    '<div>Clouds: ' + Hour2.cloudCover + '</div>' +
+                    '<div class=" d-inline">Precip Prob : ' + Hour2.precipProbability + '</div>' + '%' +
+                    '<div >Wind Dir: ' + Hour2.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(H2wndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(H2visi) + 'SM' + '</div>';
+
+                //The request to hour2 box
+                $('.hour2').append(resultsH2);
+
+                // Hourly 3 \\
+                var resultsH3 = '<span style="font-size: 11px;">' + H3DateTime + '</span>' +
+                    '<hr>' +
+                    '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(H3tmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">DP: ' + '</div>' + parseInt(H3Dp) + '<br>' +
+                    '<img src="' + icons[Hour3.icon] + '">' +
+                    '<div>Clouds: ' + Hour3.cloudCover + '</div>' +
+                    '<div class=" d-inline">Precip Prob : ' + Hour3.precipProbability + '</div>' + '%' +
+                    '<div >Wind Dir: ' + Hour3.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(H3wndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(H3visi) + 'SM' + '</div>';
+
+                //The request to hour3 box
+                $('.hour3').append(resultsH3);
+
+                // Hard Code Daily's \\
+                var resultsC = '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(ctmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">DP: ' + '</div>' + parseInt(cDp) + '<br>' +
+                    '<img src="' + icons[cur.icon] + '">' +
+                    '<div>Clouds: ' + cur.cloudCover + '</div>' +
+                    '<div class=" d-inline">Precip Prob : ' + cur.precipProbability + '</div>' + '%' +
+                    '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(cwndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(cvisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.todayCurrent').append(resultsC);
+                var results0 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ztmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ztmpL) + '<br>' +
+                    '<img src="' + icons[zero.icon] + '">' +
+                    '<div>Clouds: ' + zero.cloudCover + '</div>' +
+                    '<div>WX Condition: ' + zero.precipType + '</div>' +
+                    '<div >Wind Dir: ' + zero.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(zwndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(zvisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.today').append(results0);
+                var results1 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(otmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(otmpL) + '<br>' +
+                    '<img src="' + icons[one.icon] + '">' +
+                    '<div>Clouds: ' + one.cloudCover + '</div>' +
+                    '<div>WX Condition: ' + one.precipType + '</div>' +
+                    '<div >Wind Dir: ' + one.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(owndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(ovisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.tomorrow').append(results1);
+                var results2 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ttmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ttmpL) + '<br>' +
+                    '<img src="' + icons[two.icon] + '">' +
+                    '<div>Clouds: ' + two.cloudCover + '</div>' +
+                    '<div>WX Condition: ' + two.precipType + '</div>' +
+                    '<div >Wind Dir: ' + two.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(twndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(tvisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.secondDay').append(results2);
+                var results3 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(thtmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(thtmpL) + '<br>' +
+                    '<img src="' + icons[three.icon] + '">' +
+                    '<div>Clouds: ' + three.cloudCover + '</div>' +
+                    '<div>WX Condition: ' + three.precipType + '</div>' +
+                    '<div >Wind Dir: ' + three.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(thwndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(thvisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.thirdDay').append(results3);
+                var results4 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fotmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fotmpL) + '<br>' +
+                    '<img src="' + icons[four.icon] + '">' +
+                    '<div>Clouds: ' + four.cloudCover + '</div>' +
+                    '<div>WX Condition: ' + four.precipType + '</div>' +
+                    '<div >Wind Dir: ' + four.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(fowndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(fovisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.fourthDay').append(results4);
+                var results5 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fitmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fitmpL) + '<br>' +
+                    '<img src="' + icons[five.icon] + '">' +
+                    '<div>Clouds: ' + five.cloudCover + '</div>' +
+                    '<div>WX Condition: ' + five.precipType + '</div>' +
+                    '<div >Wind Dir: ' + five.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(fiwndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(fivisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.fifthDay').append(results5);
+                var results6 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(sitmpH) +
+                    ' / ' +
+                    '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(sitmpL) + '<br>' +
+                    '<img src="' + icons[six.icon] + '">' +
+                    '<div>Clouds: ' + six.cloudCover + '</div>' +
+                    '<div>WX Condition: ' + six.precipType + '</div>' +
+                    '<div >Wind Dir: ' + six.windBearing + '°' + '</div>' +
+                    '<div>Wind Speed: ' + parseInt(siwndSpd) + 'kt' + '</div>' +
+                    '<div>Visibility: ' + parseInt(sivisi) + 'SM' + '</div>';
+
+                //The request to fill the daily boxes
+                $('.sixthDay').append(results6);
+
+                $('.summaryCurrent').append(data.currently.summary);
+                $('.summaryWeek').append(data.daily.summary);
+
+            });
+
+            //====================
+
+
+            // $.ajax({
+            //     url: "https://api.darksky.net/forecast/ykSkraD/37.8267,-122.4233",
+            //     dataType: 'json',
+            //     success: function (data) {
+            //         data.forEach(function (data) {
+            //             console.log(data);
+            //             var blogAdd = $('<h1>' + data.title + '</h1>');
+            //             $('#posts').append(blogAdd);
+            //         })
+            //     },
+            //     error: function (jqXHR, textStatus, errorThrown) {
+            //         alert('Error: ' + textStatus + ' - ' + errorThrown);
+            //     }
+            // });
+
+        }
+        setDailies()
     })();
 
 </script>
