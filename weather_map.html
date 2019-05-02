@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+
+        body {
+            background-color: lightgrey;
+        }
+
+        .addSpace {
+            height: 4em;
+        }
+
+        .row3Day {
+            border: 2px solid lightslategray;
+            text-align: center;
+        }
+
+        .col3Day {
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        .col03day {
+            border: 2px solid white;
+            text-align: center;
+        }
+        .colcurdayimg {
+            border: 2px solid white;
+        }
+
+        #map {
+            margin-top: 2px;
+            border: 5px double white;
+            height: 500px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<nav class="topNav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand logo" href="#"><img src="CloudLogo.png" style="height: 50px; width: 50px;"
+                                                   alt="LOGO"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Log In</button>
+            </form>
+        </div>
+    </nav>
+
+</nav>
+
+<!--// Replace with a randomized picture \\-->
+<div class="addSpace">
+    <div class="bg-dark mt-1 mx-4">
+        <h1 class="text-white" style="text-align: center; border: 5px double lightslategray;">Welcome, Lets Check The
+            Weather!</h1>
+
+    </div>
+</div>
+
+<div>
+
+    <!--    Nav Tabs  -->
+
+    <ul class="dailyNav nav bg-secondary nav-tabs mt-2 mb-2 mx-4 rounded" id="tabs-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active text-dark" id="Today-tab" data-toggle="pill" href="#tabs-Today" role="tab"
+               aria-controls="tabs-Today" aria-selected="true">Today</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="3Day-tab" data-toggle="pill" href="#tabs-3Day" role="tab"
+               aria-controls="tabs-3Day" aria-selected="false">3 Day</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="5Day-tab" data-toggle="pill" href="#tabs-5Day" role="tab"
+               aria-controls="tabs-5Day" aria-selected="false">5 Day</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="7Day-tab" data-toggle="pill" href="#tabs-7Day" role="tab"
+               aria-controls="tabs-7Day" aria-selected="false">7 Day</a>
+        </li>
+    </ul>
+
+    <!--    Day panels    -->
+
+    <div class="tab-content" id="pills-tabContent">
+
+        <!--        Today    -->
+
+        <div class="tab-pane fade show active" id="tabs-Today" role="tabpanel" aria-labelledby="Today-tab">
+            <!--        Today Top-->
+            <div class='row mx-4 bg-dark text-white row3Day'>
+                <div class="col-6 col3Day d-inline bg-dark text-white">
+                    <strong class="" style="font-size: 1.5rem;">Current</strong>
+                </div>
+                <div class="col-6 col3Day d-inline bg-dark text-white">
+                    <strong class="" style="font-size: 1.5rem;">Summary</strong>
+                </div>
+            </div>
+            <!--        Today Bottom-->
+            <div class="row mx-4 bg-dark text-white row3Day">
+
+                <div class="col-6 colcurdayimg d-inline bg-dark text-white">
+                    <div class="row">
+                        <div class="col-12 dailyIcon py-2">
+                        </div>
+                        <div class="col-12 summaryCurrent mt-3" style="font-size: 1rem;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col3Day summaryWeek py-5" style="font-style: italic; font-size: 1rem;">
+
+                </div>
+            </div>
+        </div>
+
+        <!--        3 Day    -->
+
+        <div class="tab-pane fade" id="tabs-3Day" role="tabpanel" aria-labelledby="3Day-tab">
+            <!--        3 Day Top-->
+            <div class='row mx-4 bg-dark text-white row3Day'>
+                <div class="col-6 col03day d-inline bg-dark text-white">
+                    <strong class="" style="font-size: 1.1rem;">Current</strong>
+                </div>
+                <div class="col-6 col03day d-inline bg-dark text-white">
+                    <strong class="todayTitle" style="font-size: .9rem;"></strong>
+                </div>
+            </div>
+            <!--        3 Day Bottom-->
+            <div class="row mx-4 bg-dark text-white row3Day">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6 col3Day todayCurrent">
+
+                        </div>
+                        <div class="col-6 col3Day today">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 px-3">
+                    <div class='row bg-dark text-white row3Day'>
+                        <div class="col-4 col03day d-inline bg-dark text-white">
+                            <strong class="tomorrowTitle" style="font-size: .7rem;"></strong>
+                        </div>
+                        <div class="col-4 col03day d-inline bg-dark text-white">
+                            <strong class="secondDayTitle" style="font-size: .7rem;"></strong>
+                        </div>
+                        <div class="col-4 col03day d-inline bg-dark text-white">
+                            <strong class="thirdDayTitle" style="font-size: .7rem;"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 col3Day tomorrow">
+
+
+                        </div>
+                        <div class="col-4 col3Day secondDay">
+
+
+                        </div>
+                        <div class="col-4 col3Day thirdDay">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--        5 Day    -->
+
+        <div class="tab-pane fade" id="tabs-5Day" role="tabpanel" aria-labelledby="5Day-tab">
+            <!--        5 Day Top    -->
+            <div class='row mx-4 bg-dark text-white row3Day'>
+                <div class="col-6 col03day d-inline bg-dark text-white">
+                    <strong class="todayTitle" style="font-size: .7rem;"></strong>
+                </div>
+                <div class="col-6 col03day d-inline bg-dark text-white">
+                    <strong class="tomorrowTitle" style="font-size: .7rem;"></strong>
+                </div>
+            </div>
+            <!--        5 Day Bottom    -->
+            <div class="row mx-4 bg-dark text-white row3Day">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6 col3Day today">
+
+                        </div>
+                        <div class="col-6 col3Day tomorrow">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 px-3">
+                    <div class='row bg-dark text-white row3Day'>
+                        <div class="col-4 col03day d-inline bg-dark text-white">
+                            <strong class="secondDayTitle" style="font-size: .7rem;"></strong>
+                        </div>
+                        <div class="col-4 col03day d-inline bg-dark text-white">
+                            <strong class="thirdDayTitle" style="font-size: .7rem;"></strong>
+                        </div>
+                        <div class="col-4 col03day d-inline bg-dark text-white">
+                            <strong class="fourthDayTitle" style="font-size: .7rem;"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 col3Day secondDay">
+
+                        </div>
+                        <div class="col-4 col3Day thirdDay">
+
+                        </div>
+                        <div class="col-4 col3Day fourthDay">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--        7 Day    -->
+
+        <div class="tab-pane fade" id="tabs-7Day" role="tabpanel" aria-labelledby="7Day-tab">
+            <!--        7 Day Top-->
+            <div class='row mx-4 bg-dark text-white row3Day'>
+                <div class="col-4 col03day d-inline bg-dark text-white">
+                    <strong class="todayTitle" style="font-size:  .7rem;"></strong>
+                </div>
+                <div class="col-4 col03day d-inline bg-dark text-white">
+                    <strong class="tomorrowTitle" style="font-size:  .7rem;"></strong>
+                </div>
+                <div class="col-4 col03day d-inline bg-dark text-white">
+                    <strong class="secondDayTitle" style="font-size: .7rem;"></strong>
+                </div>
+            </div>
+            <!--        7 Day Bottom-->
+            <div class="row mx-4 bg-dark text-white row3Day">
+                <div class="col-12">
+                    <div class="row">
+
+                        <div class="col-4 col3Day today">
+
+                        </div>
+                        <div class="col-4 col3Day tomorrow">
+
+                        </div>
+                        <div class="col-4 col3Day secondDay">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 px-3">
+                    <div class='row bg-dark text-white row3Day'>
+                        <div class="col-3 col03day d-inline bg-dark text-white">
+                            <strong class="thirdDayTitle" style="font-size: .4rem;"></strong>
+                        </div>
+                        <div class="col-3 col03day d-inline bg-dark text-white">
+                            <strong class="fourthDayTitle" style="font-size: .4rem;"></strong>
+                        </div>
+                        <div class="col-3 col03day d-inline bg-dark text-white">
+                            <strong class="fifthDayTitle" style="font-size: .4rem;"></strong>
+                        </div>
+                        <div class="col-3 col03day d-inline bg-dark text-white">
+                            <strong class="sixthDayTitle" style="font-size: .4rem;"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3 col3Day thirdDay">
+
+                        </div>
+                        <div class="col-3 col3Day fourthDay">
+
+                        </div>
+                        <div class="col-3 col3Day fifthDay">
+
+                        </div>
+                        <div class="col-3 col3Day sixthDay">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--        Map Below      -->
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet'
+      href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
+      type='text/css'/>
+<div class="mapCon mt-1 mx-4" id='map'></div>
+<br>
+<br>
+
+<!--//Script Below-->
+<!--==================================================================================================-->
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="js/keys.js"></script>
+
+<script>
+    (function () {
+        "use strict";
+
+        var dateObject = new Date(1556773200 * 1000);
+        console.log(dateObject.toString());
+
+
+        //====================
+        //Constant Variables
+
+        const corsUrl = 'https://cors-anywhere.herokuapp.com/';
+        const darkSkyUrl = "https://api.darksky.net/forecast/";
+        const darkSkyApi = ykSkraD;
+        const accessToken = yeKxoBpaM;
+
+
+        //====================
+
+        //====================
+
+        //Map Box Info
+
+        mapboxgl.accessToken = yeKxoBpaM;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-98.4936, 29.4241],
+            zoom: 10
+        });
+
+        map.addControl(new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            result: mapboxgl
+        }));
+
+        var geocodeResultMapBox = 'https' + ':' + '//' + 'docs.mapbox.com/search-playground/' + '#' + '{%22url%22:%22san%20antonio%22,%22index%22:%22mapbox.places%22,%22staging%22:false,%22onCountry%22:false,%22onType%22:false,%22onProximity%22:false,%22onBBOX%22:false,%22onLimit%22:false,%22onLanguage%22:true,%22countries%22:[],%22proximity%22:%22%22,%22typeToggle%22:{%22country%22:false,%22region%22:false,%22district%22:false,%22postcode%22:false,%22locality%22:false,%22place%22:false,%22neighborhood%22:false,%22address%22:false,%22poi%22:false},%22types%22:[],%22bbox%22:%22%22,%22limit%22:%22%22,%22autocomplete%22:true,%22languages%22:[],%22languageStrict%22:false,%22onDebug%22:false,%22selectedLayer%22:%22%22,%22debugClick%22:{},%22localsearch%22:false,%22query%22:%22san%20anton%22}';
+
+        // MARKER FOR MAP
+
+        // var marker = new mapboxgl.Marker({
+        //     draggable: true
+        // })
+        //     .setLngLat([-98.4936, 29.4241])
+        //     .addTo(map);
+        //
+        // function onDragEnd() {
+        //     var lngLat = marker.getLngLat();
+        //     console.log(lngLat);
+        //     return lngLat;
+        // }
+        //
+        // marker.on('dragend', onDragEnd);
+        // var newCoordinates = marker.on('dragend', onDragEnd);
+        // console.log(newCoordinates);
+
+        // reverseGeoCode Below....?
+        reverseGeocode(geocodeResultMapBox, accessToken).then(function (address) {
+            geocode(address, yeKxoBpaM).then(function (coor) {
+                console.log(coor);
+                return coor;
+            })
+        });
+
+        ///////////////////////////
+        var lat = 29.4241;
+        var lng = -98.4936;
+        //\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        //====================
+
+        //====================
+
+        //Daily Icons
+
+        const icons = {
+            "clear-day": "icon/Sun.svg",
+            "clear-night": "icon/Moon-Full.svg",
+            "rain": "icon/Cloud-Rain.svg",
+            "snow": "icon/Snowflake.svg",
+            "sleet": "icon/Snowflake.svg",
+            "wind": "icon/Wind.svg",
+            "fog": "icon/Cloud-Fog.svg",
+            "cloudy": "icon/Cloud.svg",
+            "partly-cloudy-day": "icon/Cloud-Sun.svg",
+            "partly-cloudy-night": "icon/Cloud-Moon.svg"
+        };
+
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + "/" + lat + "," + lng).done(function(data) {
+            var icon = '<img src="' + icons[data.currently.icon] + '">';
+            $('.dailyIcon').append(icon);
+        });
+
+        //====================
+
+
+        //====================
+
+        //Daily Titles
+
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            var dayTitle1 = new Date(data.daily.data[0].time * 1000);
+            $('.todayTitle').append(dayTitle1)
+        });
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            var dayTitle2 = new Date(data.daily.data[1].time * 1000);
+            $('.tomorrowTitle').append(dayTitle2)
+        });
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            var dayTitle3 = new Date(data.daily.data[2].time * 1000);
+            $('.secondDayTitle').append(dayTitle3)
+        });
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            var dayTitle4 = new Date(data.daily.data[3].time * 1000);
+            $('.thirdDayTitle').append(dayTitle4)
+        });
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            var dayTitle5 = new Date(data.daily.data[4].time * 1000);
+            $('.fourthDayTitle').append(dayTitle5)
+        });
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            var dayTitle6 = new Date(data.daily.data[5].time * 1000);
+            $('.fifthDayTitle').append(dayTitle6)
+        });
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            var dayTitle7 = new Date(data.daily.data[6].time * 1000);
+            $('.sixthDayTitle').append(dayTitle7)
+        });
+
+        //====================
+
+        //====================
+
+        //Daily WX Info
+
+        $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            console.log(data);
+
+            // Array fix for daily's \\
+            let cur = data.currently;
+            let ctmpH = cur.apparentTemperature;
+            let cDp = cur.dewPoint;
+            let cwndSpd = cur.windSpeed;
+            let cvisi = cur.visibility;
+            let zero = data.daily.data[0];
+            let ztmpH = zero.apparentTemperatureHigh;
+            let ztmpL = zero.apparentTemperatureLow;
+            let zwndSpd = zero.windSpeed;
+            let zvisi = zero.visibility;
+            let one = data.daily.data[1];
+            let otmpH = one.apparentTemperatureHigh;
+            let otmpL = one.apparentTemperatureLow;
+            let owndSpd = one.windSpeed;
+            let ovisi = one.visibility;
+            let two = data.daily.data[2];
+            let ttmpH = two.apparentTemperatureHigh;
+            let ttmpL = two.apparentTemperatureLow;
+            let twndSpd = two.windSpeed;
+            let tvisi = two.visibility;
+            let three = data.daily.data[3];
+            let thtmpH = three.apparentTemperatureHigh;
+            let thtmpL = three.apparentTemperatureLow;
+            let thwndSpd = three.windSpeed;
+            let thvisi = three.visibility;
+            let four = data.daily.data[4];
+            let fotmpH = four.apparentTemperatureHigh;
+            let fotmpL = four.apparentTemperatureLow;
+            let fowndSpd = four.windSpeed;
+            let fovisi = four.visibility;
+            let five = data.daily.data[5];
+            let fitmpH = five.apparentTemperatureHigh;
+            let fitmpL = five.apparentTemperatureLow;
+            let fiwndSpd = five.windSpeed;
+            let fivisi = five.visibility;
+            let six = data.daily.data[6];
+            let sitmpH = six.apparentTemperatureHigh;
+            let sitmpL = six.apparentTemperatureLow;
+            let siwndSpd = six.windSpeed;
+            let sivisi = six.visibility;
+
+
+
+            // Hard Code Daily's \\
+            var resultsC = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ctmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">DP: ' + '</div>' + parseInt(cDp) + '<br>' +
+                '<img src="' + icons[cur.icon] + '">' +
+                '<div>Clouds: ' + cur.cloudCover + '</div>' +
+                '<div class=" d-inline">Precip Prob : ' + cur.precipProbability + '</div>' + '%' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(cwndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(cvisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.todayCurrent').append(resultsC);
+            var results0 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ztmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ztmpL) + '<br>' +
+                '<img src="' + icons[zero.icon] + '">' +
+                '<div>Clouds: ' + zero.cloudCover + '</div>' +
+                '<div>WX Condition: ' + zero.precipType + '</div>' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(zwndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(zvisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.today').append(results0);
+            var results1 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(otmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(otmpL) + '<br>' +
+                '<img src="' + icons[one.icon] + '">' +
+                '<div>Clouds: ' + one.cloudCover + '</div>' +
+                '<div>WX Condition: ' + one.precipType + '</div>' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(owndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(ovisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.tomorrow').append(results1);
+            var results2 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ttmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ttmpL) + '<br>' +
+                '<img src="' + icons[two.icon] + '">' +
+                '<div>Clouds: ' + two.cloudCover + '</div>' +
+                '<div>WX Condition: ' + two.precipType + '</div>' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(twndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(tvisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.secondDay').append(results2);
+            var results3 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(thtmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(thtmpL) + '<br>' +
+                '<img src="' + icons[three.icon] + '">' +
+                '<div>Clouds: ' + three.cloudCover + '</div>' +
+                '<div>WX Condition: ' + three.precipType + '</div>' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(thwndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(thvisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.thirdDay').append(results3);
+            var results4 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fotmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fotmpL) + '<br>' +
+                '<img src="' + icons[four.icon] + '">' +
+                '<div>Clouds: ' + four.cloudCover + '</div>' +
+                '<div>WX Condition: ' + four.precipType + '</div>' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(fowndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(fovisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.fourthDay').append(results4);
+            var results5 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fitmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fitmpL) + '<br>' +
+                '<img src="' + icons[five.icon] + '">' +
+                '<div>Clouds: ' + five.cloudCover + '</div>' +
+                '<div>WX Condition: ' + five.precipType + '</div>' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(fiwndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(fivisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.fifthDay').append(results5);
+            var results6 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(sitmpH) +
+                ' / ' +
+                '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(sitmpL) + '<br>' +
+                '<img src="' + icons[six.icon] + '">' +
+                '<div>Clouds: ' + six.cloudCover + '</div>' +
+                '<div>WX Condition: ' + six.precipType + '</div>' +
+                '<div >Wind Dir: ' + cur.windBearing + '°' + '</div>' +
+                '<div>Wind Speed: ' + parseInt(siwndSpd) + 'kt' + '</div>' +
+                '<div>Visibility: ' + parseInt(sivisi) + 'SM' + '</div>';
+
+            //The request to fill the daily boxes
+            $('.sixthDay').append(results6);
+
+            $('.summaryCurrent').append(data.currently.summary);
+            $('.summaryWeek').append(data.daily.summary);
+
+        });
+
+        //====================
+
+
+        // $.ajax({
+        //     url: "https://api.darksky.net/forecast/ykSkraD/37.8267,-122.4233",
+        //     dataType: 'json',
+        //     success: function (data) {
+        //         data.forEach(function (data) {
+        //             console.log(data);
+        //             var blogAdd = $('<h1>' + data.title + '</h1>');
+        //             $('#posts').append(blogAdd);
+        //         })
+        //     },
+        //     error: function (jqXHR, textStatus, errorThrown) {
+        //         alert('Error: ' + textStatus + ' - ' + errorThrown);
+        //     }
+        // });
+
+
+    })();
+
+</script>
+
+</body>
+</html>
