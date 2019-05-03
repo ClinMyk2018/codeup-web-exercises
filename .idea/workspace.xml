@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e80242-2b28-421b-bdd6-cd18dfd12270" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/weather_map.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,13 +36,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weather_map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="805" column="7" lean-forward="true" selection-start-line="805" selection-start-column="7" selection-end-line="805" selection-end-column="7" />
+            <state relative-caret-position="75">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="102" />
               <folding>
+                <element signature="n#link#1;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#link#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -117,19 +119,10 @@
                 <element signature="n#nav#0;n#nav#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#script#4;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#script#5;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#15539#15576#0" />
-                <element signature="e#18191#18219#0" />
-                <element signature="e#20038#20128#0" />
-                <element signature="e#17410#17538#0" />
-                <element signature="e#17635#17766#0" />
-                <element signature="e#17863#17995#0" />
-                <element signature="e#18092#18223#0" />
-                <element signature="e#18320#18452#0" />
-                <element signature="e#18549#18680#0" />
-                <element signature="e#18777#18908#0" />
+                <element signature="e#16006#36560#0" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -152,7 +145,6 @@
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="e#27586#27597#0" />
               </folding>
             </state>
           </provider>
@@ -174,6 +166,8 @@
       <find>sig</find>
       <find>posts</find>
       <find>zero</find>
+      <find>dark</find>
+      <find>darkSky</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -243,9 +237,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="192" />
+    <option name="x" value="148" />
     <option name="y" value="23" />
-    <option name="width" value="1088" />
+    <option name="width" value="1132" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -353,15 +347,15 @@
       <workItem from="1555941985051" duration="4021000" />
       <workItem from="1555966536978" duration="32391000" />
       <workItem from="1556461016209" duration="7047000" />
-      <workItem from="1556546596061" duration="87926000" />
+      <workItem from="1556546596061" duration="97768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418559000" />
+    <option name="totallyTimeSpent" value="428401000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="192" y="23" width="1088" height="777" extended-state="0" />
+    <frame x="148" y="23" width="1132" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" x="0" y="138" width="437" height="557" id="Project" order="0" type="WINDOWED" weight="0.25696203" />
@@ -382,7 +376,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329927" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.7049645" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.70454544" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.329927" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24873738" />
@@ -725,13 +719,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weather_map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="805" column="7" lean-forward="true" selection-start-line="805" selection-start-column="7" selection-end-line="805" selection-end-column="7" />
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="102" />
           <folding>
+            <element signature="n#link#1;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#link#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -805,19 +802,10 @@
             <element signature="n#nav#0;n#nav#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#script#4;n#body#0;n#html#0;n#!!top" />
             <element signature="n#script#5;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#15539#15576#0" />
-            <element signature="e#18191#18219#0" />
-            <element signature="e#20038#20128#0" />
-            <element signature="e#17410#17538#0" />
-            <element signature="e#17635#17766#0" />
-            <element signature="e#17863#17995#0" />
-            <element signature="e#18092#18223#0" />
-            <element signature="e#18320#18452#0" />
-            <element signature="e#18549#18680#0" />
-            <element signature="e#18777#18908#0" />
+            <element signature="e#16006#36560#0" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -840,7 +828,6 @@
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#27586#27597#0" />
           </folding>
         </state>
       </provider>

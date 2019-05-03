@@ -347,6 +347,10 @@
     </div>
 </div>
 
+
+<!--        BOTTOM MAP IS DUMB      -->
+
+
 <!--&lt;!&ndash;        Map Below      &ndash;&gt;-->
 
 <!--<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>-->
@@ -355,7 +359,7 @@
 <!--      type='text/css'/>-->
 <!--<div class="mapCon mt-1 mx-4" id='map'></div>-->
 <br>
-<br>
+
 
 <!--        Footer Nav Bar      -->
 
@@ -403,9 +407,8 @@
     (function () {
         "use strict";
 
-        var dateObject = new Date(1556802000 * 1000);
+        let dateObject = new Date(1556802000 * 1000);
         console.log(dateObject.toString());
-
 
         //====================
         //Constant Variables
@@ -413,17 +416,31 @@
         const corsUrl = 'https://cors-anywhere.herokuapp.com/';
         const darkSkyUrl = "https://api.darksky.net/forecast/";
         const darkSkyApi = ykSkraD;
-        const accessToken = yeKxoBpaM;
-
+        const accessToken = yeKxoBpaM; //Token for whoooooom!?
 
         //====================
+
+        //Daily Icons
+
+        const icons = {
+            "clear-day": "icon-Sun.svg",
+            "clear-night": "icon-Moon-Full.svg",
+            "rain": "icon-Cloud-Rain.svg",
+            "snow": "icon-Snowflake.svg",
+            "sleet": "icon-Snowflake.svg",
+            "wind": "icon-Wind.svg",
+            "fog": "icon-Cloud-Fog.svg",
+            "cloudy": "icon-Cloud.svg",
+            "partly-cloudy-day": "icon-Cloud-Sun.svg",
+            "partly-cloudy-night": "icon-Cloud-Moon.svg"
+        };
 
         //====================
 
         //Map Box Info
 
         mapboxgl.accessToken = yeKxoBpaM;
-        var map = new mapboxgl.Map({
+        let map = new mapboxgl.Map({
             container: 'map',
             hash: true,
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -432,15 +449,79 @@
         });
 
         map.addControl(new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl,
-            result: mapboxgl
-        }).on('result',function(data){
-            lat = data.result.center[1];
-            lng = data.result.center[0];
-            setDailies();
+                accessToken: mapboxgl.accessToken,
+                marker:false
+            }).on('result',function(data){
+                marker.setLngLat(data.result.center);
+                onDragEnd();
             })
         );
+
+        var marker = new mapboxgl.Marker({
+            draggable: true
+            // icon: "#1034A6"
+        })
+            .setLngLat([-98.4936, 29.4241])
+            .addTo(map);
+
+        let lngLat = marker.getLngLat();
+
+        function onDragEnd() {
+
+            // $.get(corsUrl + darkSkyUrl + darkSkyApi + "/" + lngLat.lat + "," + lngLat.lng + "/" , {
+            //     daily: {
+            //         data: {
+            //             temperatureHigh: "",
+            //             temperatureLow: "",
+            //             cloudCover: "",
+            //             humidity: "",
+            //             windGust: "",
+            //             pressure: ""
+            //         }
+            //     }
+            //
+            // }).done(function(data) {
+            //     console.log(data);
+            //     $('.currentSA').html(postsHtml(data));
+            // });
+            console.log(lngLat);
+            return lngLat;
+        }
+
+        marker.on('dragend', onDragEnd);
+        setDailies();
+
+        /////////////////////////////////////
+        //       HEY YOU DONT WORK!        \\
+
+        // function onDragEnd() {
+        //     let lngLat = marker.getLngLat();
+        //     console.log(lngLat);
+        //     setDailies();
+        //     return lngLat;
+        // }
+        // let marker = new mapboxgl.Marker({
+        //     draggable: true
+        // })
+        //     .setLngLat([-98.4936, 29.4241])
+        //     .addTo(map)
+        //     .on('dragend', onDragEnd);
+        //
+        // map.addControl(new MapboxGeocoder({
+        //     accessToken: mapboxgl.accessToken,
+        //     mapboxgl: mapboxgl,
+        //     result: mapboxgl,
+        //     marker: false
+        // }).on('result',function(data){
+        //     let newCoordinates = data.result.center;
+        //     console.log(newCoordinates);
+        //     lat = newCoordinates[1];
+        //     lng = newCoordinates[0];
+        //     setDailies();
+        //     })
+        // );
+
+        //       IGNORE ME!!!               \\
 
         // // Getting Lat / Lng From URL \\
         //
@@ -454,25 +535,6 @@
         //             last_partLng = partsLng[partsLng.length-1];
         //             console.log(last_partLng);
 
-
-        // MARKER FOR MAP
-
-        // var marker = new mapboxgl.Marker({
-        //     draggable: true
-        // })
-        //     .setLngLat([-98.4936, 29.4241])
-        //     .addTo(map);
-        //
-        // function onDragEnd() {
-        //     var lngLat = marker.getLngLat();
-        //     console.log(lngLat);
-        //     return lngLat;
-        // }
-        //
-        // marker.on('dragend', onDragEnd);
-        // var newCoordinates = marker.on('dragend', onDragEnd);
-        // console.log(newCoordinates);
-
         // reverseGeoCode Below....?
         // reverseGeocode(geocodeResultMapBox, accessToken).then(function (address) {
         //     geocode(address, yeKxoBpaM).then(function (coor) {
@@ -485,61 +547,45 @@
         // Lat and Lng Needed For Forecast! \\
 
         ///////////////////////////
-        var lat=29.4241;
-        var lng=-98.4936;
+        let lat =lngLat[1];
+        let lng =lngLat[0];
         console.log(lat);
         console.log(lng);
         //\\\\\\\\\\\\\\\\\\\\\\\\\
 
         //====================
         function setDailies() {
-            //====================
-
-            //Daily Icons
-
-            const icons = {
-                "clear-day": "icon-Sun.svg",
-                "clear-night": "icon-Moon-Full.svg",
-                "rain": "icon-Cloud-Rain.svg",
-                "snow": "icon-Snowflake.svg",
-                "sleet": "icon-Snowflake.svg",
-                "wind": "icon-Wind.svg",
-                "fog": "icon-Cloud-Fog.svg",
-                "cloudy": "icon-Cloud.svg",
-                "partly-cloudy-day": "icon-Cloud-Sun.svg",
-                "partly-cloudy-night": "icon-Cloud-Moon.svg"
-            };
 
             //====================
 
             //Daily Titles
 
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-                var dayTitle1 = new Date(data.daily.data[0].time * 1000);
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
+                let dayTitle1 = new Date(data.daily.data[0].time * 1000);
                 $('.todayTitle').append(dayTitle1)
             });
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-                var dayTitle2 = new Date(data.daily.data[1].time * 1000);
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
+                let dayTitle2 = new Date(data.daily.data[1].time * 1000);
                 $('.tomorrowTitle').append(dayTitle2)
             });
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-                var dayTitle3 = new Date(data.daily.data[2].time * 1000);
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
+                let dayTitle3 = new Date(data.daily.data[2].time * 1000);
                 $('.secondDayTitle').append(dayTitle3)
             });
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-                var dayTitle4 = new Date(data.daily.data[3].time * 1000);
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
+                let dayTitle4 = new Date(data.daily.data[3].time * 1000);
                 $('.thirdDayTitle').append(dayTitle4)
             });
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-                var dayTitle5 = new Date(data.daily.data[4].time * 1000);
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
+                let dayTitle5 = new Date(data.daily.data[4].time * 1000);
                 $('.fourthDayTitle').append(dayTitle5)
             });
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-                var dayTitle6 = new Date(data.daily.data[5].time * 1000);
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
+                let dayTitle6 = new Date(data.daily.data[5].time * 1000);
                 $('.fifthDayTitle').append(dayTitle6)
             });
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
-                var dayTitle7 = new Date(data.daily.data[6].time * 1000);
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
+                let dayTitle7 = new Date(data.daily.data[6].time * 1000);
                 $('.sixthDayTitle').append(dayTitle7)
             });
 
@@ -550,7 +596,7 @@
 
             //Daily WX Info
 
-            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lat + ',' + lng).done(function (data) {
+            $.get(corsUrl + darkSkyUrl + darkSkyApi + '/' + lngLat.lat + ',' + lngLat.lng).done(function (data) {
                 console.log(data);
 
                 // Array fix for hourly's \\
@@ -621,7 +667,7 @@
                 // Hard Code Hourly \\
 
                 // Hourly 1 \\
-                var resultsH1 = '<span style="font-size: 11px;">' + HDateTime + '</span>' +
+                let resultsH1 = '<span style="font-size: 11px;">' + HDateTime + '</span>' +
                     '<hr>' +
                     '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(H1tmpH) +
                     ' / ' +
@@ -637,7 +683,7 @@
                 $('.hour1').append(resultsH1);
 
                 // Hourly 2 \\
-                var resultsH2 = '<span style="font-size: 11px;">' + H2DateTime + '</span>' +
+                let resultsH2 = '<span style="font-size: 11px;">' + H2DateTime + '</span>' +
                     '<hr>' +
                     '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(H2tmpH) +
                     ' / ' +
@@ -653,7 +699,7 @@
                 $('.hour2').append(resultsH2);
 
                 // Hourly 3 \\
-                var resultsH3 = '<span style="font-size: 11px;">' + H3DateTime + '</span>' +
+                let resultsH3 = '<span style="font-size: 11px;">' + H3DateTime + '</span>' +
                     '<hr>' +
                     '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(H3tmpH) +
                     ' / ' +
@@ -669,7 +715,7 @@
                 $('.hour3').append(resultsH3);
 
                 // Hard Code Daily's \\
-                var resultsC = '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(ctmpH) +
+                let resultsC = '<div class=" d-inline" style="font-size: 10px; color: red;">Temp: ' + '</div>' + parseInt(ctmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">DP: ' + '</div>' + parseInt(cDp) + '<br>' +
                     '<img src="' + icons[cur.icon] + '">' +
@@ -681,7 +727,7 @@
 
                 //The request to fill the daily boxes
                 $('.todayCurrent').append(resultsC);
-                var results0 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ztmpH) +
+                let results0 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ztmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ztmpL) + '<br>' +
                     '<img src="' + icons[zero.icon] + '">' +
@@ -693,7 +739,7 @@
 
                 //The request to fill the daily boxes
                 $('.today').append(results0);
-                var results1 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(otmpH) +
+                let results1 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(otmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(otmpL) + '<br>' +
                     '<img src="' + icons[one.icon] + '">' +
@@ -705,7 +751,7 @@
 
                 //The request to fill the daily boxes
                 $('.tomorrow').append(results1);
-                var results2 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ttmpH) +
+                let results2 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(ttmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(ttmpL) + '<br>' +
                     '<img src="' + icons[two.icon] + '">' +
@@ -717,7 +763,7 @@
 
                 //The request to fill the daily boxes
                 $('.secondDay').append(results2);
-                var results3 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(thtmpH) +
+                let results3 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(thtmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(thtmpL) + '<br>' +
                     '<img src="' + icons[three.icon] + '">' +
@@ -729,7 +775,7 @@
 
                 //The request to fill the daily boxes
                 $('.thirdDay').append(results3);
-                var results4 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fotmpH) +
+                let results4 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fotmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fotmpL) + '<br>' +
                     '<img src="' + icons[four.icon] + '">' +
@@ -741,7 +787,7 @@
 
                 //The request to fill the daily boxes
                 $('.fourthDay').append(results4);
-                var results5 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fitmpH) +
+                let results5 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(fitmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(fitmpL) + '<br>' +
                     '<img src="' + icons[five.icon] + '">' +
@@ -753,7 +799,7 @@
 
                 //The request to fill the daily boxes
                 $('.fifthDay').append(results5);
-                var results6 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(sitmpH) +
+                let results6 = '<div class=" d-inline" style="font-size: 10px; color: red;">High: ' + '</div>' + parseInt(sitmpH) +
                     ' / ' +
                     '<div class=" d-inline" style="font-size: 10px; color: lightskyblue;">Low: ' + '</div>' + parseInt(sitmpL) + '<br>' +
                     '<img src="' + icons[six.icon] + '">' +
@@ -790,8 +836,129 @@
             // });
 
         }
-        setDailies()
+        setDailies();
+
+        //====================\\
+
     })();
+
+
+    //second mapping for Js\\
+
+    // var darkSkyUrl = "https://api.darksky.net/forecast/";
+    // var darkSkyAPIKey = ykSkraD;
+    // var corsUrl = "https://cors-anywhere.herokuapp.com/";
+    //
+    // var lat = 29.4241;
+    // var lng = -98.4936;
+    //
+    // var seconds = 1556720525;
+    //
+    // var dateObject = new Date(seconds * 1000);
+    // console.log(dateObject.toString());
+    //
+    //
+    // var icons = {
+    //     "clear-day" : "icon/SVG/Sun.svg",
+    //     "clear-night" : "icon/SVG/Moon-Full.svg",
+    //     "rain" : "icon/SVG/Cloud-Rain.svg",
+    //     "snow" : "icon/SVG/Cloud-Snow.svg",
+    //     "sleet" : "icon/SVG/Cloud-Hail.svg",
+    //     "wind" : "icon/SVG/Wind.svg",
+    //     "fog" : "icon/SVG/Cloud-Fog-Alt.svg",
+    //     "cloudy" : "icon/SVG/Cloud.svg",
+    //     "partly-cloudy-day" : "icon/SVG/Cloud-Sun.svg",
+    //     "partly-cloudy-night" : "icon/SVG/Cloud-Moon.svg"
+    // };
+    //
+    // function postsHtml(posts) {
+    //
+    //     var html = '';
+    //     var i;
+    //
+    //
+    //     for (i = 0; i <= 2; i++) {
+    //         html += '<div class="currentSA">';
+    //         html += '<h4>' + posts.daily.data[i].temperatureHigh + "/";
+    //         html += posts.daily.data[i].temperatureLow + '<img src="' + icons[posts.daily.data[i].icon] + '"></h4>';
+    //         // html += '<img src="' + icons[posts.daily.data[i].icon] + '">';
+    //         html += '<h6>Clouds: ' + posts.daily.data[i].cloudCover + '</h6>';
+    //         html += '<h6>Humidity: ' + posts.daily.data[i].humidity + '</h6>';
+    //         html += '<h6>Wind: ' + posts.daily.data[i].windGust + '</h6>';
+    //         html += '<h6>Pressure: ' + posts.daily.data[i].pressure + '</h6>';
+    //         html += '</div>';
+    //         // html += '<br>';
+    //     }
+    //
+    //     return html;
+    // }
+    //
+    // $.get(corsUrl + darkSkyUrl + darkSkyAPIKey + "/" + lat + "," + lng + "/", {
+    //     daily: {
+    //         data: {
+    //             temperatureHigh: "",
+    //             temperatureLow: "",
+    //             cloudCover: "",
+    //             humidity: "",
+    //             windGust: "",
+    //             pressure: ""
+    //         }
+    //     }
+    //
+    // }).done(function(data) {
+    //     console.log(data);
+    //     $('.hour1').html(postsHtml(data));
+    // });
+    //
+    // mapboxgl.accessToken = yeKxoBpaM;
+    //
+    // var map = new mapboxgl.Map({
+    //     container: 'map',
+    //     style: 'mapbox://styles/mapbox/streets-v11',
+    //     center: [-98.4936, 29.4241],
+    //     zoom: 9
+    // });
+    //
+    // map.addControl(new MapboxGeocoder({
+    //         accessToken: mapboxgl.accessToken,
+    //         marker:false
+    //     }).on('result',function(data){
+    //         marker.setLngLat(data.result.center);
+    //         onDragEnd();
+    //     })
+    // );
+    //
+    // var marker = new mapboxgl.Marker({
+    //     draggable: true,
+    //     icon: "#1034A6"
+    // })
+    //     .setLngLat([-98.4916, 29.4252])
+    //     .addTo(map);
+    //
+    //
+    //
+    // function onDragEnd() {
+    //     var lngLat = marker.getLngLat();
+    //
+    //     $.get(corsUrl + darkSkyUrl + darkSkyAPIKey + "/" + lngLat.lat + "," + lngLat.lng + "/", {
+    //         daily: {
+    //             data: {
+    //                 temperatureHigh: "",
+    //                 temperatureLow: "",
+    //                 cloudCover: "",
+    //                 humidity: "",
+    //                 windGust: "",
+    //                 pressure: ""
+    //             }
+    //         }
+    //
+    //     }).done(function(data) {
+    //         console.log(data);
+    //         $('.hour1').html(postsHtml(data));
+    //     });
+    // }
+    //
+    // marker.on('dragend', onDragEnd);
 
 </script>
 
