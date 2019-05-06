@@ -36,5 +36,31 @@ const users = [
     }
 ];
 
-var filteredArray = users.filter( obj => obj.value >= 3);
+let filteredArray = users.filter( ele => ele.languages.length >=3);
 console.log(filteredArray);
+
+const mapArray = users.map(email => email.email);
+console.log(mapArray);
+
+const years = users.reduce((total, person) => total + person.yearsOfExperience, 0);
+console.log(years / users.length);
+
+let longestEmail = users.reduce((longestEmail, user) => user.email.length >= longestEmail.length ? user.email : longestEmail, "");
+// if (user.email.length >= longestEmail) {
+//     longestEmail = user.email
+// }
+// return longestEmail;
+
+console.log(longestEmail);
+
+
+let instructors = users.reduce((sentence, user) =>  //user.id === users.length ?  );
+{
+    sentence = "Your intructors are: ";
+    if (user.id === users.length) {
+        return sentence + user.name + ", ";
+    } else
+        return sentence + user.name + ", ";
+
+});
+console.log(instructors);

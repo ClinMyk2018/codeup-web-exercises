@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e80242-2b28-421b-bdd6-cd18dfd12270" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/es6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/map-filter-reduce.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coming_soon.html" beforeDir="false" afterPath="$PROJECT_DIR$/coming_soon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/map-filter-reduce.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/map-filter-reduce.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +38,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/map-filter-reduce.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coming_soon.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="373">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+              <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -71,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/external_exercise.js" />
         <option value="$PROJECT_DIR$/functions_js.html" />
         <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/conditionals.html" />
@@ -95,7 +102,6 @@
         <option value="$PROJECT_DIR$/js/circle.js" />
         <option value="$PROJECT_DIR$/Defuse_the_BOM.htm" />
         <option value="$PROJECT_DIR$/DOM_ Query_and_Modify.htm" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/mapbox-1.html" />
         <option value="$PROJECT_DIR$/mapbox-2.html" />
         <option value="$PROJECT_DIR$/mapbox-3.html" />
@@ -121,6 +127,8 @@
         <option value="$PROJECT_DIR$/SVG/danieledesantis-weather-icons-sunny.svg" />
         <option value="$PROJECT_DIR$/weather_map.html" />
         <option value="$PROJECT_DIR$/js/es6.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/coming_soon.html" />
         <option value="$PROJECT_DIR$/js/map-filter-reduce.js" />
       </list>
     </option>
@@ -132,9 +140,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="271" />
+    <option name="x" value="507" />
     <option name="y" value="23" />
-    <option name="width" value="1009" />
+    <option name="width" value="773" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -152,11 +160,6 @@
             <path>
               <item name="codeup-web-exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="codeup-web-exercises" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codeup-web-exercises" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codeup-web-exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -238,15 +241,15 @@
       <workItem from="1555966536978" duration="32391000" />
       <workItem from="1556461016209" duration="7047000" />
       <workItem from="1556546596061" duration="102525000" />
-      <workItem from="1556916382266" duration="1211000" />
+      <workItem from="1556916382266" duration="8058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434369000" />
+    <option name="totallyTimeSpent" value="441216000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="271" y="23" width="1009" height="777" extended-state="0" />
+    <frame x="507" y="23" width="773" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" x="0" y="138" width="437" height="557" id="Project" order="0" type="WINDOWED" weight="0.25696203" />
@@ -288,13 +291,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DOM_ Query_and_Modify.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Defuse_the_BOM.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -485,13 +481,6 @@
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -717,10 +706,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/map-filter-reduce.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coming_soon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/map-filter-reduce.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
         </state>
       </provider>
     </entry>
