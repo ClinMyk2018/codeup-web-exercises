@@ -1,4 +1,3 @@
-
 //Long way\\
 
 // const wait = (number) => {
@@ -22,58 +21,77 @@
 //====================================\\
 
 
-
-
 // //=====================================\\
 
 // //Getting Username\\
+//
+// $('#btn').click(function () {
+//     let input = $('#user').val();
+//     console.log(input);
+//
+// //Variables for API Call\\
+//         let username = input;
+//
+//         const getDateOfMostRecentCommit = (username) => {
+//             const token = ipaTig;
+//             const baseGitHubUrl = 'https://api.github.com';
+//             const endpoint = `/users/${username}/events`;
+//             const options = {
+//                 headers: {
+//                     "Authorization": `token ${token}`
+//                 }
+//             };
+//             return fetch(baseGitHubUrl + endpoint, options)
+//             // parse response into JSON
+//                 .then(res => res.json())
+//
+//                 // return most recent push event
+//                 .then((events) => {
+//                     return events.find(event => event.type === "PushEvent");
+//                 })
+//
+//                 // return most recent commit from the event
+//                 .then(event => {
+//                     return event.payload.commits.reverse()[0];
+//                 })
+//
+//                 // fetch details about most recent commit
+//                 .then(commit => {
+//                     return fetch(commit.url);
+//                 })
+//
+//                 // parse response into JSON
+//                 .then(res => res.json())
+//
+//                 // return the specific date
+//                 .then(commitDetails => {
+//                     return new Date(commitDetails.commit.author.date).toDateString();
+//                 })
+//         };
+//
+//         getDateOfMostRecentCommit(username)
+//             .then(console.log)
+//             .catch(console.log);
+// });
+
+
+// EXTRA EXERCISES \\
+const libr = 'data/profiles.json';
 
 $('#btn').click(function () {
     let input = $('#user').val();
     console.log(input);
-    // return input;
 
-//Variables for API Call\\
-        let username = input;
+    function userColor(user) {
+        return fetch(libr)
+        // parse response into JSON \\
+        .then(res => res.json())
+        // get their color \\
 
-        const getDateOfMostRecentCommit = (username) => {
-            const token = ipaTig;
-            const baseGitHubUrl = 'https://api.github.com';
-            const endpoint = `/users/${username}/events`;
-            const options = {
-                headers: {
-                    "Authorization": `token ${token}`
-                }
-            };
-            return fetch(baseGitHubUrl + endpoint, options)
-            // parse response into JSON
-                .then(res => res.json())
 
-                // return most recent push event
-                .then((events) => {
-                    return events.find(event => event.type === "PushEvent");
-                })
+    }
 
-                // return most recent commit from the event
-                .then(event => {
-                    return event.payload.commits.reverse()[0];
-                })
-
-                // fetch details about most recent commit
-                .then(commit => {
-                    return fetch(commit.url);
-                })
-
-                // parse response into JSON
-                .then(res => res.json())
-
-                // return the specific date
-                .then(commitDetails => {
-                    return new Date(commitDetails.commit.author.date).toDateString();
-                })
-        };
-
-        getDateOfMostRecentCommit(username)
-            .then(console.log)
-            .catch(console.log);
+    userColor(input)
+        .then(console.log)
+        .catch(console.log);
 });
