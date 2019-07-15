@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e80242-2b28-421b-bdd6-cd18dfd12270" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather2.html" beforeDir="false" afterPath="$PROJECT_DIR$/weather2.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -85,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weather2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="93" column="86" lean-forward="true" selection-start-line="93" selection-start-column="86" selection-end-line="93" selection-end-column="86" />
+            <state relative-caret-position="211">
+              <caret line="146" column="26" lean-forward="true" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -301,12 +300,12 @@
       <workItem from="1557347178944" duration="6341000" />
       <workItem from="1560266712642" duration="807000" />
       <workItem from="1562215153525" duration="185000" />
-      <workItem from="1563150634807" duration="16342000" />
+      <workItem from="1563150634807" duration="17312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="482687000" />
+    <option name="totallyTimeSpent" value="483657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="23" width="1264" height="777" extended-state="0" />
@@ -708,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weather2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="93" column="86" lean-forward="true" selection-start-line="93" selection-start-column="86" selection-end-line="93" selection-end-column="86" />
+        <state relative-caret-position="211">
+          <caret line="146" column="26" lean-forward="true" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

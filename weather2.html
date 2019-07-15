@@ -21,16 +21,16 @@
 
 <div >
     <div>
-        <div class="card mr-auto">
-            <div class="container" style= "z-index: 1000;">
+        <div class="mr-auto col-2">
+            <div class="container" style= "display: block; position: absolute; z-index: 1000; background-color: #848487; ">
                 <div class="row currentSA">
 
                 </div>
             </div>
         </div>
     </div>
-    <div >
-        <div id='map' style="width: 98em; height: 40em"></div>
+    <div class="col-10">
+        <div id='map' style="width: 98em; height: 55em;"></div>
         <pre id='coordinates' class='coordinates'></pre>
     </div>
 </div>
@@ -82,12 +82,12 @@
 
 
         for (i = 0; i <= 2; i++) {
-            html += '<div class="col-4 currentSA text-center" >';
-            html += '<h3>Date:' + (new Date(posts.daily.data[i].time * 1000).getMonth() + 1) +
+            html += '<div class=" currentSA text-center mb-2" >';
+            html += '<h4>Date:' + (new Date(posts.daily.data[i].time * 1000).getMonth() + 1) +
                 '/' + (new Date(posts.daily.data[i].time * 1000)).getDate() +
-                '/' + new Date(posts.daily.data[i].time * 1000).getFullYear() + '</h3>';
-            html += '<h4>' + parseInt(posts.daily.data[i].temperatureHigh) + "/";
-            html += parseInt(posts.daily.data[i].temperatureLow) + '</h4>';
+                '/' + new Date(posts.daily.data[i].time * 1000).getFullYear() + '</h4>';
+            html += '<h5>' + parseInt(posts.daily.data[i].temperatureHigh) + "/";
+            html += parseInt(posts.daily.data[i].temperatureLow) + '</h5>';
             // html += '<img src="' + icons[posts.daily.data[i].icon] + '">';
             html += '<h6>Clouds: ' + parseInt(posts.daily.data[i].cloudCover * 100) + '%</h6>';
             html += '<h6>Humidity: ' + parseInt(posts.daily.data[i].humidity * 100) + '%</h6>';
@@ -115,7 +115,6 @@
         }
 
     }).done(function (data) {
-        console.log(data);
         $('.currentSA').html(postsHtml(data));
     });
 
@@ -131,6 +130,42 @@
         center: [-98.4916, 29.4252],
         zoom: 6
     });
+
+    var frameCount = 5;
+    var currentImage = 0;
+
+    function getPath() {
+        return "https://docs.mapbox.com/mapbox-gl-js/assets/radar" + currentImage + ".gif";
+    }
+
+    map.on('load', function() {
+
+        map.addSource("radar", {
+            type: "image",
+            url: getPath(),
+            coordinates: [
+                [-80.425, 46.437],
+                [-71.516, 46.437],
+                [-71.516, 37.936],
+                [-80.425, 37.936]
+            ]
+        });
+        map.addLayer({
+            id: "radar-layer",
+            "type": "raster",
+            "source": "radar",
+            "paint": {
+                "raster-fade-duration": 0
+            }
+        });
+
+        setInterval(function() {
+            currentImage = (currentImage + 1) % frameCount;
+            map.getSource("radar").updateImage({ url: getPath() });
+        }, 200);
+    });
+
+    map.addControl(new mapboxgl.FullscreenControl());
 
     map.addControl(new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
@@ -164,7 +199,6 @@
             }
 
         }).done(function (data) {
-            console.log(data);
             $('.currentSA').html(postsHtml(data));
         });
     }
